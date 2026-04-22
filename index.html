@@ -1,773 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SGB – Historias que Sanan | Sebastián Olmedo</title>
-  <meta name="description" content="SGB – Historias que sanan. Universo literario de Sebastián Olmedo." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0a0a0a;
-      --bg-soft:#111111;
-      --card:#151515;
-      --card-2:#1b1b1b;
-      --text:#f5f5f5;
-      --muted:#b8b8b8;
-      --line:rgba(255,255,255,.08);
-      --gold:#d8b27a;
-      --gold-soft:#f0d3a6;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:22px;
-      --max:1280px;
-    }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      background:
-        radial-gradient(circle at top right, rgba(216,178,122,.10), transparent 25%),
-        linear-gradient(180deg, #090909 0%, #0b0b0b 50%, #090909 100%);
-      color:var(--text);
-      font-family:"Inter", system-ui, sans-serif;
-      line-height:1.5;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    .container{
-      width:min(100% - 32px, var(--max));
-      margin:0 auto;
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(14px);
-      background:rgba(10,10,10,.72);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      min-height:78px;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-
-    .brand-kicker{
-      font-size:12px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:var(--gold);
-      font-weight:700;
-    }
-
-    .brand-name{
-      font-family:"Cormorant Garamond", serif;
-      font-size:34px;
-      line-height:1;
-      letter-spacing:.04em;
-      font-weight:700;
-    }
-
-    .brand-sub{
-      font-size:12px;
-      color:var(--muted);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .nav-links a{
-      font-size:14px;
-      color:#dddddd;
-      transition:.25s ease;
-    }
-
-    .nav-links a:hover{
-      color:var(--gold-soft);
-    }
-
-    .hero{
-      padding:72px 0 42px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.25fr .95fr;
-      gap:30px;
-      align-items:stretch;
-    }
-
-    .hero-copy,
-    .hero-card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border-radius:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-copy{
-      padding:38px;
-      min-height:430px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .eyebrow{
-      font-size:12px;
-      color:var(--gold);
-      letter-spacing:.30em;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      font-weight:700;
-    }
-
-    .hero h1{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(46px, 6vw, 82px);
-      line-height:.95;
-      margin-bottom:18px;
-      max-width:11ch;
-    }
-
-    .hero h1 span{
-      color:var(--gold-soft);
-    }
-
-    .hero p{
-      color:#dddddd;
-      font-size:18px;
-      max-width:60ch;
-      margin-bottom:26px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:16px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:50px;
-      padding:0 22px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      font-weight:700;
-      transition:.28s ease;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, #d8b27a, #b78a52);
-      color:#0b0b0b;
-      border:none;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      filter:brightness(1.05);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.03);
-      color:#f2f2f2;
-    }
-
-    .btn-secondary:hover{
-      border-color:rgba(255,255,255,.2);
-      background:rgba(255,255,255,.05);
-    }
-
-    .hero-note{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .hero-card{
-      padding:26px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      overflow:hidden;
-      position:relative;
-      min-height:430px;
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:auto -20% -25% auto;
-      width:320px;
-      height:320px;
-      background:radial-gradient(circle, rgba(216,178,122,.18), transparent 60%);
-      pointer-events:none;
-    }
-
-    .hero-card-top{
-      position:relative;
-      z-index:2;
-    }
-
-    .hero-card-mark{
-      font-family:"Cormorant Garamond", serif;
-      font-size:60px;
-      line-height:1;
-      color:var(--gold-soft);
-      margin-bottom:8px;
-      letter-spacing:.10em;
-    }
-
-    .hero-card-text{
-      font-size:18px;
-      color:#efefef;
-      max-width:26ch;
-      margin-bottom:14px;
-    }
-
-    .hero-card-small{
-      color:var(--muted);
-      font-size:14px;
-      max-width:34ch;
-    }
-
-    .hero-card-bottom{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin-top:28px;
-    }
-
-    .mini-stat{
-      padding:14px 16px;
-      border-radius:18px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-    }
-
-    .mini-stat strong{
-      display:block;
-      font-size:20px;
-      color:var(--gold-soft);
-      margin-bottom:4px;
-    }
-
-    .mini-stat span{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .section{
-      padding:24px 0 14px;
-    }
-
-    .section-header{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:18px;
-      margin-bottom:18px;
-    }
-
-    .section-title{
-      font-size:26px;
-      font-weight:800;
-      letter-spacing:-.02em;
-    }
-
-    .section-sub{
-      color:var(--muted);
-      font-size:14px;
-      max-width:62ch;
-    }
-
-    .row-scroll{
-      display:grid;
-      grid-auto-flow:column;
-      grid-auto-columns:minmax(220px, 260px);
-      gap:18px;
-      overflow-x:auto;
-      padding-bottom:8px;
-      scrollbar-width:thin;
-    }
-
-    .card-book{
-      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      border:1px solid var(--line);
-      border-radius:22px;
-      overflow:hidden;
-      transition:.28s ease;
-      box-shadow:var(--shadow);
-    }
-
-    .card-book:hover{
-      transform:translateY(-4px);
-      border-color:rgba(216,178,122,.35);
-    }
-
-    .cover-wrap{
-      aspect-ratio: 3 / 4.2;
-      background:#0f0f0f;
-      overflow:hidden;
-    }
-
-    .cover-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .book-body{
-      padding:16px;
-    }
-
-    .book-tag{
-      display:inline-flex;
-      margin-bottom:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(216,178,122,.12);
-      color:var(--gold-soft);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.04em;
-    }
-
-    .book-title{
-      font-size:18px;
-      font-weight:800;
-      line-height:1.15;
-      margin-bottom:8px;
-    }
-
-    .book-desc{
-      font-size:14px;
-      color:var(--muted);
-      min-height:60px;
-      margin-bottom:14px;
-    }
-
-    .book-link{
-      font-size:14px;
-      font-weight:700;
-      color:var(--gold-soft);
-    }
-
-    .feature{
-      padding:50px 0 22px;
-    }
-
-    .feature-box{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:26px;
-      align-items:center;
-      border:1px solid var(--line);
-      border-radius:30px;
-      padding:26px;
-      background:
-        radial-gradient(circle at right top, rgba(216,178,122,.10), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
-    }
-
-    .feature-copy .eyebrow{
-      margin-bottom:12px;
-    }
-
-    .feature-copy h2{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(34px, 4.6vw, 58px);
-      line-height:.98;
-      margin-bottom:14px;
-      max-width:12ch;
-    }
-
-    .feature-copy p{
-      color:#dfdfdf;
-      font-size:17px;
-      margin-bottom:18px;
-      max-width:56ch;
-    }
-
-    .feature-cover{
-      border-radius:24px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#111;
-      min-height:420px;
-    }
-
-    .feature-cover img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .author,
-    .conference,
-    .cta{
-      padding:46px 0 20px;
-    }
-
-    .panel{
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:30px;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
-    }
-
-    .panel h2{
-      font-size:30px;
-      font-weight:800;
-      margin-bottom:12px;
-    }
-
-    .panel p{
-      color:#d8d8d8;
-      max-width:68ch;
-      margin-bottom:14px;
-      font-size:16px;
-    }
-
-    .quote{
-      margin-top:18px;
-      padding:18px 20px;
-      border-left:3px solid var(--gold);
-      background:rgba(255,255,255,.025);
-      border-radius:0 18px 18px 0;
-      color:#f3f3f3;
-      font-size:18px;
-      font-family:"Cormorant Garamond", serif;
-    }
-
-    .cta-box{
-      text-align:center;
-      padding:40px 24px;
-      border:1px solid var(--line);
-      border-radius:30px;
-      background:
-        radial-gradient(circle at top center, rgba(216,178,122,.12), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
-    }
-
-    .cta-box h2{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(34px, 4vw, 54px);
-      margin-bottom:10px;
-    }
-
-    .cta-box p{
-      color:#d6d6d6;
-      max-width:60ch;
-      margin:0 auto 22px;
-      font-size:17px;
-    }
-
-    footer{
-      padding:34px 0 50px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .footer-line{
-      height:1px;
-      background:var(--line);
-      margin-bottom:18px;
-    }
-
-    @media (max-width: 980px){
-      .hero-grid,
-      .feature-box{
-        grid-template-columns:1fr;
-      }
-
-      .hero-copy,
-      .hero-card,
-      .feature-cover{
-        min-height:auto;
-      }
-    }
-
-    @media (max-width: 760px){
-      .nav{
-        align-items:flex-start;
-        padding:14px 0;
-        flex-direction:column;
-      }
-
-      .nav-links{
-        gap:14px;
-      }
-
-      .hero{
-        padding-top:38px;
-      }
-
-      .hero-copy,
-      .hero-card,
-      .panel,
-      .feature-box,
-      .cta-box{
-        padding:22px;
-      }
-
-      .row-scroll{
-        grid-auto-columns:minmax(200px, 82vw);
-      }
-
-      .hero-card-bottom{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGB – Historias que sanan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b0b0b;
+    color: white;
+}
+
+header {
+    padding: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero {
+    height: 70vh;
+    background: url('PORTADA_LIBRO_GUADA.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #e50914;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.section {
+    padding: 40px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.card {
+    min-width: 180px;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+</style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <span class="brand-kicker">SGB</span>
-        <span class="brand-name">Historias que sanan</span>
-        <span class="brand-sub">Sebastián Olmedo</span>
-      </div>
+<header>
+SEBASTIÁN OLMEDO
+</header>
 
-      <nav class="nav-links">
-        <a href="#catalogo">Catálogo</a>
-        <a href="#destacado">Destacado</a>
-        <a href="#autor">Autor</a>
-        <a href="#conferencias">Conferencias</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Historias que sanan</h1>
+        <p>Libros que no se leen… se sienten.</p>
+        <button class="btn">Explorar</button>
     </div>
-  </header>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Catálogo oficial SGB</div>
-          <h1>Libros que no buscan gustarte. <span>Buscan despertarte.</span></h1>
-          <p>
-            SGB – Historias que sanan es el universo literario de Sebastián Olmedo:
-            libros intensos, humanos y directos, escritos para quienes aprendieron a caer,
-            resistir y volver.
-          </p>
+<section class="section">
+    <h2>Libros destacados</h2>
+    <div class="carousel">
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
-            <a class="btn btn-secondary" href="#conferencias">Invitar a una charla</a>
-          </div>
-
-          <div class="hero-note">
-            Libros en formato digital, tapa blanda y futuras ediciones exclusivas fuera de Amazon.
-          </div>
+        <div class="card">
+            <img src="PORTADA_LIBRO_GUADA.jpg">
         </div>
 
-        <aside class="hero-card">
-          <div class="hero-card-top">
-            <div class="hero-card-mark">SGB</div>
-            <div class="hero-card-text">
-              Una biblioteca emocional, cruda y humana construida libro por libro.
-            </div>
-            <div class="hero-card-small">
-              Un espacio para lectores que no buscan distracción, sino verdad, profundidad y una historia que se quede con ellos.
-            </div>
-          </div>
-
-          <div class="hero-card-bottom">
-            <div class="mini-stat">
-              <strong>Catálogo vivo</strong>
-              <span>Nuevos títulos, nuevas etapas y evolución constante.</span>
-            </div>
-            <div class="mini-stat">
-              <strong>Identidad propia</strong>
-              <span>Una web independiente para crecer más allá de Amazon.</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="catalogo">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Tendencia ahora</div>
-            <div class="section-sub">Una primera fila visual tipo plataforma. Después la vamos ampliando con más libros, links y preventas.</div>
-          </div>
+        <div class="card">
+            <img src="balduino.png">
         </div>
 
-        <div class="row-scroll">
-          <article class="card-book">
-            <div class="cover-wrap">
-              <img src="guadalasonrisa.png" alt="Guada: la sonrisa que venció al dolor">
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Historia real</span>
-              <h3 class="book-title">Guada: la sonrisa que venció al dolor</h3>
-              <p class="book-desc">Una historia real de valentía, constancia y amor que atraviesa todo.</p>
-              <a class="book-link" href="#">Ver libro</a>
-            </div>
-          </article>
-
-          <article class="card-book">
-            <div class="cover-wrap">
-              <img src="depresyvos.png" alt="Depres y Vos">
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Profundidad humana</span>
-              <h3 class="book-title">Depres y Vos</h3>
-              <p class="book-desc">Un recorrido íntimo por los lugares donde el dolor no siempre se deja nombrar.</p>
-              <a class="book-link" href="#">Ver libro</a>
-            </div>
-          </article>
-
-          <article class="card-book">
-            <div class="cover-wrap">
-              <img src="balduinov.png" alt="Balduino IV">
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Novela épica</span>
-              <h3 class="book-title">Balduino IV</h3>
-              <p class="book-desc">La historia de un rey que luchó contra el tiempo, el cuerpo y el destino.</p>
-              <a class="book-link" href="#">Ver libro</a>
-            </div>
-          </article>
-
-          <article class="card-book">
-            <div class="cover-wrap">
-              <img src="discapacidad.png" alt="DIS+CAPACIDAD">
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Próximo proyecto</span>
-              <h3 class="book-title">DIS+CAPACIDAD</h3>
-              <p class="book-desc">Una mirada humana, profunda y necesaria sobre la diferencia, la fuerza y el amor.</p>
-              <a class="book-link" href="#">Próximamente</a>
-            </div>
-          </article>
+        <div class="card">
+            <img src="depresyvos.png">
         </div>
-      </div>
-    </section>
 
-    <section class="feature" id="destacado">
-      <div class="container">
-        <div class="feature-box">
-          <div class="feature-copy">
-            <div class="eyebrow">Destacado</div>
-            <h2>Una historia que no se lee. Se siente.</h2>
-            <p>
-              “Guada: la sonrisa que venció al dolor” no es solo un libro. Es una obra atravesada por la vida real, por la resistencia cotidiana y por un amor que no negocia con el dolor.
-            </p>
-            <p>
-              Esta web también nace de ahí: de la necesidad de que cada libro tenga una casa propia, una presencia real y una forma más profunda de encontrarse con sus lectores.
-            </p>
-            <a class="btn btn-primary" href="#">Explorar libro</a>
-          </div>
-
-          <div class="feature-cover">
-            <img src="guadalasonrisa.png" alt="Libro destacado Guada">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="author" id="autor">
-      <div class="container">
-        <div class="panel">
-          <h2>Sebastián Olmedo</h2>
-          <p>
-            No escribe desde teoría. No escribe para encajar. Escribe desde la vida, desde lo que duele, desde lo que muchos sienten pero no saben cómo decir.
-          </p>
-          <p>
-            SGB – Historias que sanan no busca llenar una web de productos. Busca construir un territorio propio: una plataforma donde cada libro tenga identidad, profundidad y una conexión más real con sus lectores.
-          </p>
-          <div class="quote">
-            “No escribo libros para distraer. Escribo libros para que algo adentro se mueva.”
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="conference" id="conferencias">
-      <div class="container">
-        <div class="panel">
-          <h2>Conferencias SGB</h2>
-          <p>
-            La experiencia SGB también puede llevarse a escuelas, espacios culturales, eventos y encuentros donde haga falta una palabra real, humana y movilizadora.
-          </p>
-          <p>
-            No se trata de una charla vacía. Se trata de presencia, verdad y una experiencia que deje huella.
-          </p>
-          <a class="btn btn-secondary" href="#contacto">Consultar disponibilidad</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contacto">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Este sitio recién empieza.</h2>
-          <p>
-            Lo próximo es sumar más libros, páginas individuales, enlaces de compra, preventas exclusivas y venta directa con identidad propia.
-          </p>
-          <div class="hero-actions" style="justify-content:center;">
-            <a class="btn btn-primary" href="mailto:contacto@editorialsgb.com">Escribir por mail</a>
-            <a class="btn btn-secondary" href="#">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-line"></div>
-      <div>SGB – Historias que sanan · Sebastián Olmedo · editorialsgb.com</div>
     </div>
-  </footer>
+</section>
 
 </body>
 </html>
