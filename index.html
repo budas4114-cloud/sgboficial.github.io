@@ -1,121 +1,792 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SGB – Historias que sanan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGB – Historias que sanan | Sebastián Olmedo</title>
+  <meta name="description" content="SGB – Historias que sanan. Universo editorial y literario de Sebastián Olmedo." />
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #0b0b0b;
-    color: white;
-}
+  <style>
+    :root{
+      --bg:#070709;
+      --bg-soft:#101017;
+      --panel:#14141c;
+      --panel-2:#1a1a24;
+      --text:#f5f5f7;
+      --muted:#b8bdc9;
+      --gold:#d7a65d;
+      --gold-soft:#f0c98e;
+      --line:rgba(255,255,255,.08);
+      --red:#b91c1c;
+      --shadow:0 20px 50px rgba(0,0,0,.38);
+      --radius:26px;
+      --max:1280px;
+    }
 
-header {
-    padding: 30px;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(215,166,93,.10), transparent 20%),
+        radial-gradient(circle at top left, rgba(255,255,255,.04), transparent 22%),
+        linear-gradient(180deg, #050506 0%, #0b0b10 55%, #050506 100%);
+      line-height:1.5;
+    }
 
-.hero {
-    height: 70vh;
-    background: url('PORTADA_LIBRO_GUADA.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 60px;
-}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
 
-.hero-text {
-    max-width: 600px;
-}
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin:0 auto;
+    }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(7,7,9,.74);
+      border-bottom:1px solid var(--line);
+    }
 
-.hero-text p {
-    font-size: 18px;
-    color: #ccc;
-}
+    .nav{
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
 
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #e50914;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
 
-.section {
-    padding: 40px;
-}
+    .brand img{
+      width:54px;
+      height:54px;
+      object-fit:contain;
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      padding:4px;
+      border:1px solid var(--line);
+    }
 
-.section h2 {
-    margin-bottom: 20px;
-}
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.02;
+    }
 
-.carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-}
+    .brand-copy strong{
+      font-size:14px;
+      color:var(--gold-soft);
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
 
-.card {
-    min-width: 180px;
-    transition: transform 0.3s;
-}
+    .brand-copy span{
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      color:#fff;
+    }
 
-.card img {
-    width: 100%;
-    border-radius: 6px;
-}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
 
-.card:hover {
-    transform: scale(1.1);
-}
-</style>
+    .nav-links a{
+      font-size:14px;
+      font-weight:600;
+      color:#e7e9ee;
+      opacity:.92;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold-soft);
+    }
+
+    .hero{
+      padding:42px 0 22px;
+    }
+
+    .hero-box{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:stretch;
+      min-height:620px;
+    }
+
+    .hero-copy,
+    .hero-media{
+      border:1px solid var(--line);
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      padding:42px;
+      background:
+        radial-gradient(circle at top left, rgba(215,166,93,.12), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .eyebrow{
+      font-size:12px;
+      color:var(--gold-soft);
+      letter-spacing:.30em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(56px, 7vw, 94px);
+      line-height:.9;
+      margin-bottom:18px;
+      max-width:10ch;
+    }
+
+    .hero-copy p{
+      color:#d8dde7;
+      font-size:18px;
+      max-width:58ch;
+      margin-bottom:24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.25s ease;
+      border:1px solid var(--line);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, #d7a65d, #b97d33);
+      color:#0c0c0f;
+      border:none;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      color:#f5f5f7;
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.07);
+    }
+
+    .hero-note{
+      color:var(--muted);
+      font-size:14px;
+      max-width:60ch;
+    }
+
+    .hero-media{
+      position:relative;
+      background:
+        radial-gradient(circle at center, rgba(215,166,93,.18), transparent 35%),
+        linear-gradient(180deg, #14121a, #0a0a0d);
+      min-height:620px;
+    }
+
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,7,9,.14) 0%, rgba(7,7,9,.02) 35%, rgba(7,7,9,.30) 100%),
+        linear-gradient(180deg, rgba(7,7,9,.12), rgba(7,7,9,.22));
+      pointer-events:none;
+    }
+
+    .hero-media img{
+      position:absolute;
+      right:0;
+      bottom:0;
+      height:100%;
+      width:auto;
+      object-fit:contain;
+      object-position:right bottom;
+      z-index:1;
+    }
+
+    .hero-quote{
+      position:absolute;
+      left:28px;
+      top:28px;
+      z-index:2;
+      max-width:420px;
+      padding:22px 24px;
+      border-radius:24px;
+      background:rgba(10,10,14,.58);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(10px);
+    }
+
+    .hero-quote strong{
+      display:block;
+      font-size:13px;
+      color:var(--gold-soft);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .hero-quote p{
+      font-family:"Cormorant Garamond",serif;
+      font-size:34px;
+      line-height:.98;
+      color:#fff3df;
+    }
+
+    .section{
+      padding:18px 0 8px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      font-size:30px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:68ch;
+      font-size:14px;
+    }
+
+    .row-scroll{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:minmax(220px, 260px);
+      gap:18px;
+      overflow-x:auto;
+      padding-bottom:10px;
+      scrollbar-width:thin;
+    }
+
+    .book-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+
+    .book-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(215,166,93,.35);
+    }
+
+    .cover{
+      aspect-ratio:3/4.3;
+      background:#101014;
+      overflow:hidden;
+    }
+
+    .cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .book-body{
+      padding:16px;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(215,166,93,.14);
+      color:var(--gold-soft);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .book-body h3{
+      font-size:18px;
+      line-height:1.12;
+      margin-bottom:8px;
+    }
+
+    .book-body p{
+      font-size:14px;
+      color:var(--muted);
+      min-height:62px;
+      margin-bottom:12px;
+    }
+
+    .book-link{
+      color:#9ac7ff;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .feature{
+      padding:44px 0 12px;
+    }
+
+    .feature-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+      border-radius:32px;
+      border:1px solid var(--line);
+      padding:24px;
+      background:
+        radial-gradient(circle at right top, rgba(215,166,93,.12), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .feature-copy h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(40px,5vw,64px);
+      line-height:.95;
+      margin-bottom:14px;
+      max-width:12ch;
+    }
+
+    .feature-copy p{
+      color:#d6dbe4;
+      font-size:17px;
+      margin-bottom:16px;
+      max-width:58ch;
+    }
+
+    .feature-media{
+      min-height:460px;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#111;
+    }
+
+    .feature-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .panel-wrap{
+      padding:34px 0 12px;
+    }
+
+    .panel{
+      border-radius:28px;
+      border:1px solid var(--line);
+      padding:30px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .panel h2{
+      font-size:32px;
+      margin-bottom:12px;
+    }
+
+    .panel p{
+      color:#d7dce6;
+      max-width:72ch;
+      margin-bottom:12px;
+      font-size:16px;
+    }
+
+    .quote{
+      margin-top:18px;
+      padding:18px 20px;
+      border-left:3px solid var(--gold);
+      background:rgba(255,255,255,.03);
+      border-radius:0 18px 18px 0;
+      font-family:"Cormorant Garamond",serif;
+      font-size:23px;
+      color:#fff1db;
+    }
+
+    .cta{
+      padding:40px 0 34px;
+    }
+
+    .cta-box{
+      text-align:center;
+      border-radius:32px;
+      border:1px solid var(--line);
+      padding:36px 22px;
+      background:
+        radial-gradient(circle at top center, rgba(215,166,93,.14), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(38px,4.5vw,58px);
+      margin-bottom:10px;
+    }
+
+    .cta-box p{
+      color:#d7dce6;
+      max-width:62ch;
+      margin:0 auto 18px;
+      font-size:17px;
+    }
+
+    footer{
+      padding:8px 0 42px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-line{
+      height:1px;
+      background:var(--line);
+      margin-bottom:18px;
+    }
+
+    @media (max-width: 1020px){
+      .hero-box,
+      .feature-box{
+        grid-template-columns:1fr;
+      }
+
+      .hero-media{
+        min-height:520px;
+      }
+
+      .hero-media img{
+        right:50%;
+        transform:translateX(50%);
+      }
+    }
+
+    @media (max-width: 760px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        gap:12px;
+      }
+
+      .hero-copy,
+      .panel,
+      .feature-box,
+      .cta-box{
+        padding:22px;
+      }
+
+      .hero-media{
+        min-height:460px;
+      }
+
+      .hero-quote{
+        left:18px;
+        top:18px;
+        right:18px;
+        max-width:none;
+      }
+
+      .hero-quote p{
+        font-size:28px;
+      }
+
+      .row-scroll{
+        grid-auto-columns:minmax(210px, 82vw);
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-SEBASTIÁN OLMEDO
-</header>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="logoeditorial.png" alt="SGB Editorial">
+        <div class="brand-copy">
+          <strong>SGB</strong>
+          <span>Historias que sanan</span>
+        </div>
+      </div>
 
-<section class="hero">
-    <div class="hero-text">
-        <h1>Historias que sanan</h1>
-        <p>Libros que no se leen… se sienten.</p>
-        <button class="btn">Explorar</button>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#destacado">Destacado</a>
+        <a href="#autor">Autor</a>
+        <a href="#conferencias">Conferencias</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section class="section">
-    <h2>Libros destacados</h2>
-    <div class="carousel">
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-box">
+        <div class="hero-copy">
+          <div class="eyebrow">Sebastián Olmedo · SGB Editorial</div>
+          <h1>No escribo para entretenerte.</h1>
+          <p>
+            Escribo para que te enfrentes con vos. Esta web no vino a decorar.
+            Vino a convertirse en la casa real de un catálogo que crece, vende,
+            impacta y deja marca.
+          </p>
 
-        <div class="card">
-            <img src="PORTADA_LIBRO_GUADA.jpg">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Explorar libros</a>
+            <a class="btn btn-secondary" href="#destacado">Ver destacado</a>
+          </div>
+
+          <div class="hero-note">
+            Más de 40 libros publicados, identidad propia y una plataforma lista para crecer más allá de Amazon.
+          </div>
         </div>
 
-        <div class="card">
-            <img src="balduino.png">
+        <div class="hero-media">
+          <div class="hero-quote">
+            <strong>SGB · Identidad real</strong>
+            <p>Leé si estás listo para dejar de mentirte.</p>
+          </div>
+          <img src="sebastian-hero.png" alt="Sebastián Olmedo">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Catálogo SGB</h2>
+            <p>
+              Una primera fila brutal, más viva y más visual. Después seguimos con páginas individuales, compra directa, Mercado Pago y enlaces reales.
+            </p>
+          </div>
         </div>
 
-        <div class="card">
-            <img src="depresyvos.png">
-        </div>
+        <div class="row-scroll">
+          <article class="book-card">
+            <div class="cover">
+              <img src="guadalasonrisa.png" alt="Guada">
+            </div>
+            <div class="book-body">
+              <span class="pill">Historia real</span>
+              <h3>Guada: la sonrisa que venció al dolor</h3>
+              <p>Una obra atravesada por la valentía, el amor y la verdad de una vida real.</p>
+              <a class="book-link" href="#destacado">Ver destacado</a>
+            </div>
+          </article>
 
+          <article class="book-card">
+            <div class="cover">
+              <img src="depresyvos.png" alt="Depres y Vos">
+            </div>
+            <div class="book-body">
+              <span class="pill">Publicado</span>
+              <h3>Depres y Vos</h3>
+              <p>Un libro íntimo y directo sobre el dolor silencioso que atraviesa a miles.</p>
+              <a class="book-link" href="#autor">Seguir explorando</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="balduinov.png" alt="Balduino IV">
+            </div>
+            <div class="book-body">
+              <span class="pill">Novela histórica</span>
+              <h3>Balduino IV</h3>
+              <p>La historia feroz de un rey marcado por el cuerpo, la fe y el destino.</p>
+              <a class="book-link" href="#contacto">Consultar</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="argentum.png" alt="Argentum">
+            </div>
+            <div class="book-body">
+              <span class="pill">Ensayo / narrativa</span>
+              <h3>Argentum</h3>
+              <p>Una mirada intensa sobre la tierra de lo posible y sus contradicciones.</p>
+              <a class="book-link" href="#contacto">Próximo paso</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="laeradelaenvidia.png" alt="La era de la envidia">
+            </div>
+            <div class="book-body">
+              <span class="pill">Impacto social</span>
+              <h3>La era de la envidia</h3>
+              <p>Cuando brillar molesta, el sistema muestra su costado más oscuro.</p>
+              <a class="book-link" href="#contacto">Próximo paso</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="lacatedradelboludo.png" alt="La cátedra del boludo">
+            </div>
+            <div class="book-body">
+              <span class="pill">Crítica social</span>
+              <h3>La cátedra del boludo</h3>
+              <p>Una portada que ya golpea sola. Después le armamos su espacio propio.</p>
+              <a class="book-link" href="#contacto">Próximo paso</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="lasanacionpordentro.png" alt="La sanación por dentro">
+            </div>
+            <div class="book-body">
+              <span class="pill">Sanación interior</span>
+              <h3>La sanación por dentro</h3>
+              <p>Cuando el cuerpo empieza a hablar lo que el alma viene callando.</p>
+              <a class="book-link" href="#contacto">Próximo paso</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="cover">
+              <img src="chisme.png" alt="El chisme">
+            </div>
+            <div class="book-body">
+              <span class="pill">Psicología social</span>
+              <h3>El chisme</h3>
+              <p>Una lectura incómoda sobre inseguridad, miedo y violencia cotidiana.</p>
+              <a class="book-link" href="#contacto">Próximo paso</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="destacado">
+      <div class="container">
+        <div class="feature-box">
+          <div class="feature-copy">
+            <div class="eyebrow">Libro central del sitio</div>
+            <h2>Una historia que no se lee. Se siente.</h2>
+            <p>
+              “Guada: la sonrisa que venció al dolor” tiene que ocupar un lugar fuerte en esta home porque no es un libro más: es una obra emocional, humana y profundamente tuya.
+            </p>
+            <p>
+              Desde acá, después, le armamos su página individual con botón de compra, muestra gratis, datos del libro y acceso a versión digital o tapa blanda.
+            </p>
+            <a class="btn btn-primary" href="#contacto">Seguir construyendo</a>
+          </div>
+
+          <div class="feature-media">
+            <img src="guadalasonrisa.png" alt="Guada destacada">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-wrap" id="autor">
+      <div class="container">
+        <div class="panel">
+          <h2>Sebastián Olmedo</h2>
+          <p>
+            Autor, creador y fundador del universo SGB – Historias que sanan. Una obra construida desde la vida real, desde el dolor transformado y desde una forma de escribir que no negocia con la verdad.
+          </p>
+          <p>
+            Esta web no está pensada para “mostrar libros” solamente. Está pensada para ordenar un catálogo, construir marca, generar impacto y abrir una etapa nueva de venta directa e identidad propia.
+          </p>
+          <div class="quote">
+            “No escribo para distraer. Escribo para que algo adentro se mueva.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-wrap" id="conferencias">
+      <div class="container">
+        <div class="panel">
+          <h2>Conferencias SGB</h2>
+          <p>
+            El universo SGB también puede salir del libro y convertirse en experiencia viva: charlas, presentaciones, encuentros culturales, espacios educativos y conferencias con identidad propia.
+          </p>
+          <p>
+            Acá después sumamos formulario, WhatsApp o botón directo para contrataciones y propuestas.
+          </p>
+          <a class="btn btn-secondary" href="#contacto">Ir a contacto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <div class="cta-box">
+          <h2>La base ya está. Ahora viene lo mejor.</h2>
+          <p>
+            El próximo paso es subir todas las portadas que faltan al repo, activar enlaces reales, sumar páginas por libro y preparar venta directa con identidad SGB.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="mailto:contacto@editorialsgb.com">Escribir por mail</a>
+            <a class="btn btn-secondary" href="#inicio">Volver arriba</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line"></div>
+      <div>SGB – Historias que sanan · Sebastián Olmedo · editorialsgb.com</div>
     </div>
-</section>
+  </footer>
 
 </body>
 </html>
