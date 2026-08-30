@@ -515,6 +515,91 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       margin-bottom:18px;
     }
 
+    /* Catálogo interactivo SGB */
+    .catalog-section{
+      padding:42px 0 20px;
+    }
+
+    .catalog-section .section-head{
+      align-items:flex-start;
+      margin-bottom:22px;
+    }
+
+    .catalog-section .section-head h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(42px,5vw,64px);
+      line-height:.95;
+      color:#fff3df;
+      margin-bottom:10px;
+    }
+
+    .catalog-actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .catalog-open{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:44px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(215,166,93,.34);
+      background:rgba(215,166,93,.10);
+      color:var(--gold-soft);
+      font-weight:800;
+      transition:.25s ease;
+    }
+
+    .catalog-open:hover{
+      transform:translateY(-2px);
+      background:rgba(215,166,93,.18);
+    }
+
+    .catalog-embed{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(215,166,93,.24);
+      border-radius:32px;
+      background:#f2eee5;
+      box-shadow:0 28px 70px rgba(0,0,0,.48);
+    }
+
+    .catalog-embed::before{
+      content:"";
+      display:block;
+      height:4px;
+      background:linear-gradient(90deg, #a94034, #d7a65d, #a94034);
+    }
+
+    .catalog-frame{
+      display:block;
+      width:100%;
+      height:1320px;
+      border:0;
+      background:#f2eee5;
+    }
+
+    @media (max-width: 1020px){
+      .catalog-frame{height:1180px}
+      .catalog-embed{border-radius:24px}
+    }
+
+    @media (max-width: 760px){
+      .catalog-section{padding-top:28px}
+      .catalog-frame{height:1040px}
+      .catalog-embed{border-radius:18px}
+      .catalog-actions{align-items:flex-start}
+    }
+
     @media (max-width: 1020px){
       .hero-box,
       .feature-box{
@@ -628,106 +713,39 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       </div>
     </section>
 
-    <section class="section" id="catalogo">
+    <section class="section catalog-section" id="catalogo">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Catálogo SGB</h2>
+            <div class="eyebrow">Biblioteca SGB</div>
+            <h2>Catálogo interactivo</h2>
             <p>
-              Explorá el catálogo completo de SGB: historias reales, libros que incomodan,
-              que hacen pensar y que dejan marca. Elegí, leé una muestra y accedé
-              directamente a cada obra.
+              Buscá por título, temática o palabra clave. Usá los filtros y abrí
+              cualquier obra para conocer su ficha, su estado editorial y sus enlaces.
             </p>
           </div>
         </div>
 
-        <div class="row-scroll">
-          <article class="book-card">
-            <div class="cover">
-              <img src="PORTADA GUADA LA SONRISA.jpg" alt="Guada">
-            </div>
-            <div class="book-body">
-              <span class="pill">Historia real</span>
-              <h3>Guada: la sonrisa que venció al dolor</h3>
-              <p>Una obra atravesada por la valentía, el amor y la verdad de una vida real.</p>
-             <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+        <div class="catalog-actions">
+          <span>30 obras cargadas · 8 temáticas · buscador y fichas completas</span>
+          <a
+            class="catalog-open"
+            href="https://catalogo-sgb-privado.budas4114.chatgpt.site"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir en pantalla completa ↗
+          </a>
+        </div>
 
-<a href="GUADA-MUESTRA-WEB.epub"
-style="
-background:#f4d29a;
-color:#111;
-padding:10px 18px;
-border-radius:999px;
-text-decoration:none;
-font-weight:700;
-font-size:15px;
-display:inline-block;
-">
-Leer muestra
-</a>
-
-<a href="mailto:elsebasolmedo@hotmail.com?subject=Quiero comprar GUADA directo al autor"
-style="
-background:#111827;
-color:#fff;
-padding:10px 18px;
-border-radius:999px;
-text-decoration:none;
-font-weight:700;
-font-size:15px;
-display:inline-block;
-border:1px solid rgba(255,255,255,0.08);
-">
-Comprar directo
-</a>
-
-</div>
-              <div style="margin-top:18px; font-size:16px; line-height:1.9; color:#d7d7d7;">
-              <strong>EPUB digital · Entrega directa</strong><br>
-              Precio: $20.000 ARS<br>
-              Alias MP: <strong>olmedosebastian79</strong><br>
-              Una vez realizado el pago, enviá el comprobante por mail y recibís el libro completo.
-              </div>
-          </article>
-
-          <article class="book-card">
-            <div class="cover">
-              <img src="DEPRESYVOS.png" alt="DEPRESYVOS">
-            </div>
-            <div class="book-body">
-              <span class="pill">Publicado</span>
-              <h3>DEPRESYVOS</h3>
-              <p>Un libro íntimo y directo sobre el dolor silencioso que atraviesa a miles.</p>
-              <a class="book-link" href="DEPRESYVOS-muestra.html">Leer muestra</a>
-              <a class="book-link" href="https://www.amazon.es/dp/B0G4JSXYQB/" target="_blank">Comprar en Amazon</a>
-            </div>
-          </article>
-
-          <article class="book-card">
-            <div class="cover">
-              <img src="EL PAIS DE LOS VIVOS PORTADA FINAL.jpg" alt="EL PAIS DE LOS VIVOS">
-            </div>
-            <div class="book-body">
-              <span class="pill">Publicado</span>
-              <h3>El país de los vivos</h3>
-              <p>Un viaje crudo por la cultura del atajo y las verdades que nadie quiere mirar.</p>
-           <a class="book-link" href="El país de los vivos-muestra.html">Leer muestra</a>
-           <a class="book-link" href="https://www.amazon.es/dp/B0GKWL5TPJ/" target="_blank">Comprar en Amazon</a>
-            </div>
-          </article>
-
-          <article class="book-card">
-            <div class="cover">
-              <img src="PORTADA BALDUINO IV.jpg" alt="Balduino IV">
-            </div>
-            <div class="book-body">
-              <span class="pill">Novela histórica</span>
-              <h3>BALDUINO IV</h3>
-              <p>La historia feroz de un rey marcado por el cuerpo, la fe y el destino.</p>
-             <a class="book-link" href="BALDUINO IV.html">Leer muestra</a>
-             <a class="book-link" href="https://www.amazon.es/dp/B0G518HD61/" target="_blank">Comprar en Amazon</a>
-            </div>
-          </article>
+        <div class="catalog-embed" role="region" aria-label="Catálogo interactivo de Editorial SGB">
+          <iframe
+            class="catalog-frame"
+            src="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
+            title="Catálogo interactivo de Editorial SGB"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -907,3 +925,4 @@ Facebook Oficial
 </body>
   
 </html>
+
