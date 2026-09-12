@@ -203,6 +203,20 @@
       transform:translateY(-2px);
     }
 
+    .btn-buy{
+      min-height:64px;
+      padding:0 34px;
+      font-size:18px;
+      letter-spacing:.03em;
+      box-shadow:0 16px 34px rgba(215,166,93,.24);
+    }
+
+    .btn-buy::after{
+      content:" →";
+      margin-left:6px;
+      font-size:20px;
+    }
+
     .btn-secondary{
       background:rgba(255,255,255,.04);
       color:#f5f5f7;
@@ -651,6 +665,12 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       .row-scroll{
         grid-auto-columns:minmax(210px, 82vw);
       }
+
+      .btn-buy{
+        width:100%;
+        min-height:62px;
+        font-size:18px;
+      }
       
       .brand img{
         width: 100px;
@@ -697,16 +717,16 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#catalogo">Explorar libros</a>
+            <a class="btn btn-primary btn-buy" href="#catalogo" aria-label="Comprar libros de Editorial SGB">COMPRAR AQUÍ</a>
             <a class="btn btn-secondary" href="#destacado">Ver destacado</a>
           </div>
 
           <div class="hero-note">
-            Más de 52 libros publicados, identidad propia y una plataforma lista para crecer más allá de Amazon Kindle.
+            Elegí el libro que te interese, leé gratis la muestra y compralo solo si te convence. Todo desde el catálogo SGB.
           </div>
         </div>
 
-        
+        <div class="hero-media">
           <img src="Sebastian_Olmedo_SGB.jpg
           " alt="Sebastián Olmedo">
         </div>
