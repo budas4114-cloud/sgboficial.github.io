@@ -126,10 +126,10 @@
 
     .hero-box{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.18fr .82fr;
       gap:24px;
       align-items:stretch;
-      min-height:540px;
+      min-height:500px;
     }
 
     .hero-copy,
@@ -141,7 +141,7 @@
     }
 
     .hero-copy{
-      padding:42px;
+      padding:34px 38px;
       background:
         radial-gradient(circle at top left, rgba(215,166,93,.12), transparent 26%),
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
@@ -237,7 +237,7 @@
       background:
         radial-gradient(circle at center, rgba(215,166,93,.18), transparent 35%),
         linear-gradient(180deg, #14121a, #0a0a0d);
-      min-height:540px;
+      min-height:500px;
     }
 
     .hero-media::after{
@@ -620,8 +620,17 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         grid-template-columns:1fr;
       }
 
+      .hero-copy{
+        padding:28px;
+      }
+
+      h1{
+        font-size:clamp(36px, 6.8vw, 46px);
+        max-width:18ch;
+      }
+
       .hero-media{
-        min-height:480px;
+        min-height:440px;
       }
 
       .hero-media img{
