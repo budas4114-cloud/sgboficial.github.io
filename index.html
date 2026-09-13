@@ -126,10 +126,10 @@
 
     .hero-box{
       display:grid;
-      grid-template-columns:1.18fr .82fr;
+      grid-template-columns:1.1fr .9fr;
       gap:24px;
       align-items:stretch;
-      min-height:500px;
+      min-height:620px;
     }
 
     .hero-copy,
@@ -141,7 +141,7 @@
     }
 
     .hero-copy{
-      padding:34px 38px;
+      padding:42px;
       background:
         radial-gradient(circle at top left, rgba(215,166,93,.12), transparent 26%),
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
@@ -169,9 +169,9 @@
     
      .hero-copy p{
       color:#d8dde7;
-      font-size:17px;
-      max-width:54ch;
-      margin-bottom:22px;
+      font-size:18px;
+      max-width:58ch;
+      margin-bottom:24px;
     }
     
     .hero-actions{
@@ -237,7 +237,7 @@
       background:
         radial-gradient(circle at center, rgba(215,166,93,.18), transparent 35%),
         linear-gradient(180deg, #14121a, #0a0a0d);
-      min-height:500px;
+      min-height:620px;
     }
 
     .hero-media::after{
@@ -620,17 +620,8 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         grid-template-columns:1fr;
       }
 
-      .hero-copy{
-        padding:28px;
-      }
-
-      h1{
-        font-size:clamp(36px, 6.8vw, 46px);
-        max-width:18ch;
-      }
-
       .hero-media{
-        min-height:440px;
+        min-height:520px;
       }
 
       .hero-media img{
@@ -687,72 +678,9 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         display: block;
       }
       
-  
-    /* =========================================================
-       SGB · HERO COMERCIAL COMPACTO · AJUSTE FINAL
-       Estas reglas van al final para prevalecer sobre estilos previos.
-       ========================================================= */
-    .hero-copy h1{
-      font-family:"Cormorant Garamond",serif;
-      font-size:46px !important;
-      line-height:1.02 !important;
-      letter-spacing:-.02em;
-      max-width:22ch !important;
-      margin-bottom:16px;
-      text-wrap:balance;
-    }
-
-    .hero-box{
-      min-height:500px !important;
-      grid-template-columns:1.18fr .82fr;
-    }
-
-    .hero-copy{
-      padding:32px 38px !important;
-    }
-
-    .hero-media{
-      min-height:500px !important;
-    }
-
-    @media (max-width: 1180px) and (min-width: 1021px){
-      .hero-copy h1{
-        font-size:40px !important;
-        max-width:22ch !important;
-      }
-
-      .hero-copy{
-        padding:28px 32px !important;
-      }
-
-      .hero-box,
-      .hero-media{
-        min-height:470px !important;
-      }
-    }
-
-    @media (max-width: 1020px){
-      .hero-copy h1{
-        font-size:42px !important;
-        max-width:20ch !important;
-      }
-    }
-
-    @media (max-width: 760px){
-      .hero-copy h1{
-        font-size:38px !important;
-        max-width:none !important;
-      }
-
-      .hero-copy{
-        padding:22px !important;
-      }
-    }
-
   </style>
 </head>
 <body>
-  <!-- SGB-HERO-COMPACTO-FINAL-2026-09-12 -->
 
   <header class="topbar">
     <div class="container nav">
@@ -788,11 +716,14 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary btn-buy" href="#catalogo" aria-label="Ver libros disponibles para comprar en Editorial SGB">VER LIBROS DISPONIBLES</a>
+            <a class="btn btn-secondary" href="#catalogo" aria-label="Ver el catálogo interactivo de Editorial SGB">VER LIBROS DISPONIBLES</a>
+            <a class="btn btn-primary btn-buy"
+               href="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
+               aria-label="Comprar los e-books disponibles directamente en Editorial SGB">COMPRAR AQUÍ</a>
           </div>
 
           <div class="hero-note">
-            Compra directa · Pago seguro con Mercado Pago · Entrega digital por e-mail
+            Catálogo interactivo · Compra directa de 3 títulos · Pago seguro con Mercado Pago · Entrega digital por e-mail
           </div>
         </div>
 
