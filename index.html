@@ -58,7 +58,7 @@
     }
 
     .nav{
-      min-height:94px;
+      min-height:126px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -887,13 +887,13 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
        SGB · LOGO ANIMADO REAL EN CABECERA
        ========================================================= */
     .brand-video-mark{
-      width:82px;
-      height:82px;
+      width:160px;
+      height:118px;
       display:flex;
       align-items:center;
       justify-content:center;
       overflow:hidden;
-      border-radius:20px;
+      border-radius:18px;
       border:1px solid rgba(215,166,93,.24);
       background:#050507;
       box-shadow:0 14px 34px rgba(0,0,0,.42);
@@ -904,7 +904,8 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       width:100%;
       height:100%;
       display:block;
-      object-fit:contain;
+      object-fit:cover;
+      object-position:center 46%;
       background:#050507;
       border-radius:inherit;
     }
@@ -916,55 +917,69 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 
     @media (max-width:760px){
       .brand-video-mark{
-        width:62px;
-        height:62px;
-        border-radius:16px;
+        width:118px;
+        height:86px;
+        border-radius:14px;
+      }
+    }
+
+  
+    /* SGB · AJUSTE FINAL DE VISIBILIDAD DEL LOGO ANIMADO */
+    .brand-video-mark{
+      width:160px !important;
+      height:118px !important;
+    }
+    .brand-logo-video{
+      object-fit:cover !important;
+      object-position:center 46% !important;
+    }
+    @media (max-width:760px){
+      .brand-video-mark{
+        width:118px !important;
+        height:86px !important;
       }
     }
 
   
     /* =========================================================
-       SGB · AJUSTE FINAL DEL LOGO ANIMADO
-       El video es vertical; se recorta con COVER para que el logo
-       se vea grande y legible dentro de la cabecera.
+       SGB · LOGO ANIMADO RECORTADO Y LEGIBLE · AJUSTE FINAL
        ========================================================= */
+    .nav{
+      min-height:158px !important;
+    }
+
     .brand-video-mark{
-      width:112px !important;
-      height:86px !important;
-      border-radius:18px !important;
+      width:150px !important;
+      height:150px !important;
+      border-radius:20px !important;
       overflow:hidden !important;
       background:#050507 !important;
-      flex:0 0 auto !important;
     }
 
     .brand-logo-video{
       width:100% !important;
       height:100% !important;
-      object-fit:cover !important;
-      object-position:50% 50% !important;
-      transform:scale(1.06);
-      transform-origin:center center;
-      background:#050507 !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+      transform:none !important;
     }
 
     @media (max-width:760px){
-      .brand-video-mark{
-        width:82px !important;
-        height:64px !important;
-        border-radius:14px !important;
+      .nav{
+        min-height:112px !important;
       }
-
-      .brand-logo-video{
-        object-fit:cover !important;
-        object-position:50% 50% !important;
-        transform:scale(1.04);
+      .brand-video-mark{
+        width:96px !important;
+        height:96px !important;
+        border-radius:16px !important;
       }
     }
 
   </style>
 </head>
 <body>
-  <!-- SGB LOGO ANIMADO AMPLIADO · 2026-09-13 -->
+  <!-- SGB LOGO RECORTADO, GRANDE Y LEGIBLE · 2026-09-13 -->
+  <!-- SGB LOGO ANIMADO MÁS GRANDE Y LEGIBLE · 2026-09-13 -->
   <!-- SGB LOGO ANIMADO REAL · 2026-09-13 -->
   <!-- SGB HEADER PROFESIONAL + MARIPOSA ANIMADA · 2026-09-13 -->
 
@@ -980,7 +995,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
                  preload="metadata"
                  poster="SGB_Logo_Oficial.jpg"
                  aria-label="Logo animado de SGB Editorial">
-            <source src="SGB_Logo_Animado.mp4" type="video/mp4">
+            <source src="SGB_Logo_Animado_Recortado.mp4" type="video/mp4">
           </video>
         </div>
         <div class="brand-copy">
