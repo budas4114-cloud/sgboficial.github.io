@@ -922,9 +922,49 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · AJUSTE FINAL DEL LOGO ANIMADO
+       El video es vertical; se recorta con COVER para que el logo
+       se vea grande y legible dentro de la cabecera.
+       ========================================================= */
+    .brand-video-mark{
+      width:112px !important;
+      height:86px !important;
+      border-radius:18px !important;
+      overflow:hidden !important;
+      background:#050507 !important;
+      flex:0 0 auto !important;
+    }
+
+    .brand-logo-video{
+      width:100% !important;
+      height:100% !important;
+      object-fit:cover !important;
+      object-position:50% 50% !important;
+      transform:scale(1.06);
+      transform-origin:center center;
+      background:#050507 !important;
+    }
+
+    @media (max-width:760px){
+      .brand-video-mark{
+        width:82px !important;
+        height:64px !important;
+        border-radius:14px !important;
+      }
+
+      .brand-logo-video{
+        object-fit:cover !important;
+        object-position:50% 50% !important;
+        transform:scale(1.04);
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB LOGO ANIMADO AMPLIADO · 2026-09-13 -->
   <!-- SGB LOGO ANIMADO REAL · 2026-09-13 -->
   <!-- SGB HEADER PROFESIONAL + MARIPOSA ANIMADA · 2026-09-13 -->
 
