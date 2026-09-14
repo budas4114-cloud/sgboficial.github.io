@@ -975,9 +975,105 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · CORRECCIÓN RESPONSIVE REAL PARA CELULAR
+       ========================================================= */
+    @media (max-width:760px){
+      .container{
+        width:calc(100% - 24px) !important;
+      }
+
+      .hero{
+        padding:16px 0 14px !important;
+      }
+
+      .hero-box{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:14px !important;
+        min-height:0 !important;
+      }
+
+      .hero-copy,
+      .hero-media{
+        width:100% !important;
+        min-width:0 !important;
+        border-radius:24px !important;
+      }
+
+      .hero-copy{
+        padding:24px 22px !important;
+        overflow:visible !important;
+      }
+
+      .eyebrow{
+        font-size:10px !important;
+        line-height:1.5 !important;
+        letter-spacing:.20em !important;
+        margin-bottom:14px !important;
+      }
+
+      .hero-copy h1{
+        font-size:clamp(38px, 11vw, 50px) !important;
+        line-height:.96 !important;
+        max-width:none !important;
+        width:100% !important;
+        margin-bottom:16px !important;
+        overflow-wrap:normal !important;
+        word-break:normal !important;
+        text-wrap:balance !important;
+      }
+
+      .hero-copy p{
+        font-size:16px !important;
+        line-height:1.55 !important;
+        max-width:none !important;
+        margin-bottom:18px !important;
+      }
+
+      .hero-actions{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:10px !important;
+        width:100% !important;
+        margin-bottom:14px !important;
+      }
+
+      .hero-actions .btn,
+      .hero-actions .btn-buy{
+        width:100% !important;
+        min-height:54px !important;
+        padding:0 18px !important;
+        font-size:15px !important;
+        text-align:center !important;
+      }
+
+      .hero-note{
+        font-size:12px !important;
+        line-height:1.5 !important;
+      }
+
+      .hero-media{
+        min-height:320px !important;
+        height:320px !important;
+        overflow:hidden !important;
+      }
+
+      .hero-media img{
+        position:absolute !important;
+        inset:auto 0 0 0 !important;
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+        object-position:center 20% !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB RESPONSIVE CELULAR CORREGIDO · 2026-09-14 -->
   <!-- SGB LOGO RECORTADO, GRANDE Y LEGIBLE · 2026-09-13 -->
   <!-- SGB LOGO ANIMADO MÁS GRANDE Y LEGIBLE · 2026-09-13 -->
   <!-- SGB LOGO ANIMADO REAL · 2026-09-13 -->
