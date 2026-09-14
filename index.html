@@ -882,17 +882,66 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · LOGO ANIMADO REAL EN CABECERA
+       ========================================================= */
+    .brand-video-mark{
+      width:82px;
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid rgba(215,166,93,.24);
+      background:#050507;
+      box-shadow:0 14px 34px rgba(0,0,0,.42);
+      flex:0 0 auto;
+    }
+
+    .brand-logo-video{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      background:#050507;
+      border-radius:inherit;
+    }
+
+    /* La mariposa generada por CSS ya no se usa: ahora forma parte del video real */
+    .brand-butterfly{
+      display:none !important;
+    }
+
+    @media (max-width:760px){
+      .brand-video-mark{
+        width:62px;
+        height:62px;
+        border-radius:16px;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB LOGO ANIMADO REAL · 2026-09-13 -->
   <!-- SGB HEADER PROFESIONAL + MARIPOSA ANIMADA · 2026-09-13 -->
 
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="SGB Historias que sanan — Inicio">
-        <div class="brand-mark">
-          <img src="SGB_Logo_Oficial.jpg" alt="SGB Editorial">
-          <span class="brand-butterfly" aria-hidden="true"><i></i></span>
+        <div class="brand-mark brand-video-mark">
+          <video class="brand-logo-video"
+                 autoplay
+                 muted
+                 loop
+                 playsinline
+                 preload="metadata"
+                 poster="SGB_Logo_Oficial.jpg"
+                 aria-label="Logo animado de SGB Editorial">
+            <source src="SGB_Logo_Animado.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="brand-copy">
           <strong>SGB</strong>
