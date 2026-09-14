@@ -49,75 +49,232 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(14px);
-      background:rgba(7,7,9,.74);
-      border-bottom:1px solid var(--line);
+      z-index:1000;
+      backdrop-filter:blur(18px) saturate(140%);
+      -webkit-backdrop-filter:blur(18px) saturate(140%);
+      background:rgba(5,5,7,.86);
+      border-bottom:1px solid rgba(215,166,93,.16);
+      box-shadow:0 10px 35px rgba(0,0,0,.28);
     }
 
     .nav{
-      min-height:86px;
+      min-height:94px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
-      padding:14px 0;
+      gap:26px;
+      padding:10px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:15px;
+      min-width:0;
     }
     
-   .brand img{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  border-radius:22px;
-  background:rgba(255,255,255,.02);
-  padding:4px;
-  border:1px solid rgba(215,166,93,.22);
-  box-shadow:0 14px 34px rgba(0,0,0,.42);
-     
+    .brand img{
+      width:82px;
+      height:82px;
+      object-fit:contain;
+      border-radius:20px;
+      background:rgba(255,255,255,.02);
+      padding:3px;
+      border:1px solid rgba(215,166,93,.24);
+      box-shadow:0 14px 34px rgba(0,0,0,.42);
     }
 
     .brand-copy{
       display:flex;
       flex-direction:column;
-      line-height:1.02;
+      line-height:1.04;
+      min-width:0;
     }
 
     .brand-copy strong{
-      font-size:14px;
+      font-size:12px;
       color:var(--gold-soft);
-      letter-spacing:.22em;
+      letter-spacing:.28em;
       text-transform:uppercase;
+      margin-bottom:4px;
     }
 
     .brand-copy span{
       font-family:"Cormorant Garamond",serif;
-      font-size:30px;
+      font-size:27px;
       color:#fff;
+      white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
+      gap:7px;
+      flex-wrap:nowrap;
+      padding:6px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.025);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
     }
 
     .nav-links a{
-      font-size:14px;
-      font-weight:600;
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 15px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
       color:#e7e9ee;
-      opacity:.92;
-      transition:.25s ease;
+      border:1px solid transparent;
+      transition:transform .22s ease, color .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
     }
 
     .nav-links a:hover{
-      color:var(--gold-soft);
+      color:#fff;
+      background:rgba(215,166,93,.10);
+      border-color:rgba(215,166,93,.28);
+      transform:translateY(-1px);
+    }
+
+
+    .brand-mark{
+      position:relative;
+      flex:0 0 auto;
+    }
+
+    .brand-welcome{
+      margin-top:5px;
+      font-size:10px;
+      font-weight:600;
+      color:#aeb4c0;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    /* Mariposa SGB: movimiento sutil y premium */
+    .brand-butterfly{
+      position:absolute;
+      right:-7px;
+      top:-8px;
+      width:34px;
+      height:26px;
+      filter:drop-shadow(0 0 8px rgba(240,201,142,.52));
+      animation:butterflyFloat 5.2s ease-in-out infinite;
+      pointer-events:none;
+      z-index:4;
+    }
+
+    .brand-butterfly::before,
+    .brand-butterfly::after{
+      content:"";
+      position:absolute;
+      top:2px;
+      width:15px;
+      height:21px;
+      background:linear-gradient(145deg,#fff1c5 0%,#e6b665 42%,#9b6127 100%);
+      border:1px solid rgba(255,240,195,.34);
+      box-shadow:inset 0 0 7px rgba(255,255,255,.18);
+    }
+
+    .brand-butterfly::before{
+      left:2px;
+      border-radius:80% 24% 68% 30%;
+      transform-origin:100% 72%;
+      animation:wingLeft 1.8s ease-in-out infinite;
+    }
+
+    .brand-butterfly::after{
+      right:2px;
+      border-radius:24% 80% 30% 68%;
+      transform-origin:0% 72%;
+      animation:wingRight 1.8s ease-in-out infinite;
+    }
+
+    .brand-butterfly i{
+      position:absolute;
+      left:50%;
+      top:8px;
+      width:3px;
+      height:15px;
+      transform:translateX(-50%);
+      border-radius:999px;
+      background:linear-gradient(#f6d393,#8b5521);
+      box-shadow:0 0 7px rgba(240,201,142,.45);
+      z-index:2;
+    }
+
+    @keyframes wingLeft{
+      0%,100%{transform:rotate(-26deg) scaleX(1)}
+      50%{transform:rotate(-7deg) scaleX(.72)}
+    }
+
+    @keyframes wingRight{
+      0%,100%{transform:rotate(26deg) scaleX(1)}
+      50%{transform:rotate(7deg) scaleX(.72)}
+    }
+
+    @keyframes butterflyFloat{
+      0%,100%{transform:translate3d(0,0,0) rotate(-2deg)}
+      50%{transform:translate3d(3px,-6px,0) rotate(4deg)}
+    }
+
+    .nav-links a.active{
+      color:#111014;
+      background:linear-gradient(135deg,#f2cf95,#c88b43);
+      border-color:transparent;
+      box-shadow:0 7px 20px rgba(215,166,93,.22);
+    }
+
+    .nav-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid rgba(215,166,93,.24);
+      background:rgba(255,255,255,.035);
+      color:#fff;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+      transition:.22s ease;
+    }
+
+    .nav-toggle:hover{
+      background:rgba(215,166,93,.09);
+      border-color:rgba(215,166,93,.42);
+    }
+
+    .nav-toggle span{
+      width:20px;
+      height:2px;
+      border-radius:999px;
+      background:var(--gold-soft);
+      transition:.25s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){
+      transform:translateY(6px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){
+      opacity:0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){
+      transform:translateY(-6px) rotate(-45deg);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .brand-butterfly,
+      .brand-butterfly::before,
+      .brand-butterfly::after{
+        animation:none !important;
+      }
     }
 
     .hero{
@@ -608,36 +765,88 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
     }
 
     @media (max-width: 760px){
-      .catalog-section{padding-top:28px}
-      .catalog-frame{height:1040px}
-      .catalog-embed{border-radius:18px}
-      .catalog-actions{align-items:flex-start}
-    }
-
-    @media (max-width: 1020px){
-      .hero-box,
-      .feature-box{
-        grid-template-columns:1fr;
-      }
-
-      .hero-media{
-        min-height:520px;
-      }
-
-      .hero-media img{
-        right:50%;
-        transform:translateX(50%);
-      }
-    }
-
-    @media (max-width: 760px){
       .nav{
-        flex-direction:column;
-        align-items:flex-start;
+        min-height:78px;
+        flex-direction:row;
+        align-items:center;
+        gap:12px;
+        padding:9px 0;
+        position:relative;
+      }
+
+      .brand{
+        gap:10px;
+        min-width:0;
+        flex:1 1 auto;
+      }
+
+      .brand img{
+        width:62px;
+        height:62px;
+        border-radius:16px;
+      }
+
+      .brand-copy strong{
+        font-size:10px;
+        letter-spacing:.22em;
+      }
+
+      .brand-copy span{
+        font-size:20px;
+        white-space:normal;
+        line-height:1;
+      }
+
+      .brand-welcome{
+        font-size:8px;
+        letter-spacing:.08em;
+        white-space:normal;
+      }
+
+      .brand-butterfly{
+        right:-7px;
+        top:-8px;
+        transform:scale(.82);
+      }
+
+      .nav-toggle{
+        display:flex;
+        flex:0 0 auto;
       }
 
       .nav-links{
-        gap:12px;
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+        padding:12px;
+        border-radius:20px;
+        background:rgba(8,8,11,.98);
+        border:1px solid rgba(215,166,93,.18);
+        box-shadow:0 20px 50px rgba(0,0,0,.46);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-8px);
+        pointer-events:none;
+        transition:.22s ease;
+      }
+
+      .nav-links.open{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+        pointer-events:auto;
+      }
+
+      .nav-links a{
+        min-height:46px;
+        padding:0 12px;
+        border-radius:14px;
+        background:rgba(255,255,255,.025);
+        border-color:rgba(255,255,255,.04);
       }
 
       .hero-copy,
@@ -663,7 +872,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
 
       .row-scroll{
-        grid-auto-columns:minmax(210px, 82vw);
+        grid-auto-columns:minmax(210px,82vw);
       }
 
       .btn-buy{
@@ -671,30 +880,33 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         min-height:62px;
         font-size:18px;
       }
-      
-      .brand img{
-        width: 100px;
-        height: auto;
-        display: block;
-      }
-      
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB HEADER PROFESIONAL + MARIPOSA ANIMADA · 2026-09-13 -->
 
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">
-        <img src="SGB_Logo_Oficial.jpg
-       " alt="SGB Editorial">
+      <a class="brand" href="#inicio" aria-label="SGB Historias que sanan — Inicio">
+        <div class="brand-mark">
+          <img src="SGB_Logo_Oficial.jpg" alt="SGB Editorial">
+          <span class="brand-butterfly" aria-hidden="true"><i></i></span>
+        </div>
         <div class="brand-copy">
           <strong>SGB</strong>
           <span>Historias que sanan</span>
+          <small class="brand-welcome">Bienvenidos a la web oficial</small>
         </div>
-      </div>
+      </a>
 
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="sgbNavLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="sgbNavLinks" aria-label="Navegación principal">
+        <a class="active" href="#inicio">Inicio</a>
         <a href="#catalogo">Catálogo</a>
         <a href="#destacado">Destacado</a>
         <a href="#autor">Autor</a>
@@ -942,6 +1154,59 @@ Facebook Oficial
       <div>© 2026 SGB – Historias que sanan. Todos los derechos reservados. Ninguna parte de este sitio puede ser reproducida sin autorización previa. Sebastián Olmedo · editorialsgb.com · Córdoba - Argentina </div>
     </div>
   </footer>
+
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('sgbNavLinks');
+      const links = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menú');
+          });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (window.innerWidth <= 760 && nav.classList.contains('open')) {
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+              nav.classList.remove('open');
+              toggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      }
+
+      const sections = links
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(entries => {
+          const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+          links.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + visible.target.id);
+          });
+        }, { rootMargin:'-35% 0px -55% 0px', threshold:[0,.15,.35,.6] });
+
+        sections.forEach(section => observer.observe(section));
+      }
+    })();
+  </script>
 
 </body>
   
