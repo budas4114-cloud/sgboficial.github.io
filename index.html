@@ -1070,9 +1070,251 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · AUDIOBOOKS — PRÓXIMAMENTE EN LA WEB
+       ========================================================= */
+    #audiobooks{
+      scroll-margin-top:180px;
+    }
+
+    .nav-links .nav-audio{
+      color:#f3c982;
+      border-color:rgba(215,166,93,.28);
+      background:rgba(215,166,93,.07);
+    }
+
+    .btn-audio{
+      background:rgba(215,166,93,.08);
+      color:#f3c982;
+      border:1px solid rgba(215,166,93,.42);
+      letter-spacing:.035em;
+    }
+
+    .btn-audio:hover{
+      transform:translateY(-2px);
+      background:rgba(215,166,93,.15);
+      border-color:rgba(243,201,130,.62);
+    }
+
+    .audiobooks-section{
+      padding:48px 0 26px;
+    }
+
+    .audiobooks-card{
+      display:grid;
+      grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+      gap:0;
+      overflow:hidden;
+      border-radius:34px;
+      border:1px solid rgba(215,166,93,.24);
+      background:
+        radial-gradient(circle at 14% 20%, rgba(215,166,93,.17), transparent 34%),
+        linear-gradient(135deg,#17110d 0%,#0d0b0b 50%,#09090c 100%);
+      box-shadow:0 28px 70px rgba(0,0,0,.36);
+    }
+
+    .audio-visual{
+      min-height:430px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px;
+      border-right:1px solid rgba(215,166,93,.15);
+      background:
+        radial-gradient(circle at center, rgba(215,166,93,.18), transparent 44%),
+        linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));
+    }
+
+    .audio-disc{
+      width:min(300px,82%);
+      aspect-ratio:1;
+      border-radius:50%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:26px;
+      border:1px solid rgba(243,201,130,.30);
+      box-shadow:
+        inset 0 0 0 14px rgba(215,166,93,.025),
+        inset 0 0 0 42px rgba(215,166,93,.025),
+        0 0 60px rgba(215,166,93,.12);
+      background:
+        radial-gradient(circle,#18100b 0 18%,#0d0d10 19% 45%,#15100c 46% 48%,#08090c 49% 100%);
+    }
+
+    .audio-mic{
+      font-family:"Cormorant Garamond",serif;
+      font-size:54px;
+      font-weight:700;
+      letter-spacing:.08em;
+      color:#f0c57f;
+      text-shadow:0 0 24px rgba(215,166,93,.22);
+    }
+
+    .audio-wave{
+      height:46px;
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .audio-wave span{
+      width:5px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#f0c57f,#a96e2d);
+      box-shadow:0 0 12px rgba(215,166,93,.18);
+      animation:sgbAudioWave 1.35s ease-in-out infinite;
+    }
+    .audio-wave span:nth-child(1){height:18px;animation-delay:0s}
+    .audio-wave span:nth-child(2){height:34px;animation-delay:.12s}
+    .audio-wave span:nth-child(3){height:46px;animation-delay:.24s}
+    .audio-wave span:nth-child(4){height:30px;animation-delay:.36s}
+    .audio-wave span:nth-child(5){height:16px;animation-delay:.48s}
+
+    @keyframes sgbAudioWave{
+      0%,100%{transform:scaleY(.72);opacity:.72}
+      50%{transform:scaleY(1.08);opacity:1}
+    }
+
+    .audiobooks-copy{
+      padding:48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .audiobooks-copy h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(42px,5vw,68px);
+      line-height:.95;
+      color:#fff4df;
+      margin:8px 0 18px;
+      max-width:13ch;
+    }
+
+    .audio-lead{
+      color:#d8d8dc;
+      font-size:19px;
+      line-height:1.65;
+      max-width:58ch;
+    }
+
+    .audio-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:24px 0;
+    }
+
+    .audio-points span{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(215,166,93,.23);
+      background:rgba(215,166,93,.07);
+      color:#f0d4a6;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .audio-coming{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      width:fit-content;
+      max-width:100%;
+      padding:15px 18px;
+      border-radius:18px;
+      border:1px solid rgba(215,166,93,.38);
+      background:linear-gradient(135deg,rgba(215,166,93,.14),rgba(215,166,93,.05));
+    }
+
+    .audio-coming strong{
+      color:#f5c97e;
+      letter-spacing:.18em;
+      font-size:12px;
+    }
+
+    .audio-coming span{
+      color:#f5f1e9;
+      font-size:15px;
+    }
+
+    @media (max-width:1180px) and (min-width:761px){
+      .nav-links a{
+        padding:0 10px;
+        font-size:12px;
+      }
+    }
+
+    @media (max-width:760px){
+      #audiobooks{
+        scroll-margin-top:125px;
+      }
+
+      .audiobooks-section{
+        padding:24px 0 16px;
+      }
+
+      .audiobooks-card{
+        grid-template-columns:1fr;
+        border-radius:24px;
+      }
+
+      .audio-visual{
+        min-height:260px;
+        border-right:0;
+        border-bottom:1px solid rgba(215,166,93,.15);
+        padding:24px;
+      }
+
+      .audio-disc{
+        width:210px;
+      }
+
+      .audio-mic{
+        font-size:42px;
+      }
+
+      .audiobooks-copy{
+        padding:26px 22px 30px;
+      }
+
+      .audiobooks-copy h2{
+        font-size:clamp(38px,11vw,52px);
+        max-width:none;
+      }
+
+      .audio-lead{
+        font-size:16px;
+      }
+
+      .audio-points{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .audio-points span{
+        text-align:center;
+      }
+
+      .audio-coming{
+        width:100%;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .audio-wave span{
+        animation:none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB AUDIOBOOKS: botón + sección web · sin plataforma externa · 2026-09-15 -->
+  <!-- SGB ACTUALIZADO: 12 compras directas · 60 obras · Facebook corregido · 2026-09-15 -->
   <!-- SGB RESPONSIVE CELULAR CORREGIDO · 2026-09-14 -->
   <!-- SGB LOGO RECORTADO, GRANDE Y LEGIBLE · 2026-09-13 -->
   <!-- SGB LOGO ANIMADO MÁS GRANDE Y LEGIBLE · 2026-09-13 -->
@@ -1108,6 +1350,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       <nav class="nav-links" id="sgbNavLinks" aria-label="Navegación principal">
         <a class="active" href="#inicio">Inicio</a>
         <a href="#catalogo">Catálogo</a>
+        <a class="nav-audio" href="#audiobooks">Audiobooks</a>
         <a href="#destacado">Destacado</a>
         <a href="#autor">Autor</a>
         <a href="#conferencias">Conferencias</a>
@@ -1132,10 +1375,11 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             <a class="btn btn-primary btn-buy"
                href="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
                aria-label="Comprar los e-books disponibles directamente en Editorial SGB">COMPRAR AQUÍ</a>
+            <a class="btn btn-audio" href="#audiobooks" aria-label="Ir a la sección Audiobooks SGB">AUDIOBOOKS SGB</a>
           </div>
 
           <div class="hero-note">
-            Catálogo interactivo · Compra directa de 3 títulos · Pago seguro con Mercado Pago · Entrega digital por e-mail
+            Catálogo interactivo · Compra directa de 12 títulos · Pago seguro con Mercado Pago · Entrega digital por e-mail
           </div>
         </div>
 
@@ -1160,7 +1404,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         </div>
 
         <div class="catalog-actions">
-          <span>30 obras cargadas · 8 temáticas · buscador y fichas completas</span>
+          <span>60 obras cargadas · 8 temáticas · buscador y fichas completas</span>
           <a
             class="catalog-open"
             href="https://catalogo-sgb-privado.budas4114.chatgpt.site"
@@ -1179,6 +1423,41 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             loading="eager"
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section audiobooks-section" id="audiobooks">
+      <div class="container">
+        <div class="audiobooks-card">
+          <div class="audio-visual" aria-hidden="true">
+            <div class="audio-disc">
+              <div class="audio-mic">SGB</div>
+              <div class="audio-wave">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="audiobooks-copy">
+            <div class="eyebrow">NUEVO PROYECTO SGB · AUDIOBOOKS</div>
+            <h2>Historias que sanan, ahora también para escuchar.</h2>
+            <p class="audio-lead">
+              Próximamente vas a poder escuchar desde esta misma web audiolibros,
+              relatos y reflexiones en audio de Editorial SGB.
+            </p>
+
+            <div class="audio-points">
+              <span>Audiolibros narrados</span>
+              <span>Reflexiones en audio</span>
+              <span>Historias inspiradoras</span>
+            </div>
+
+            <div class="audio-coming">
+              <strong>PRÓXIMAMENTE</strong>
+              <span>Se podrán escuchar directamente desde editorialsgb.com</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1331,13 +1610,13 @@ Si una historia te llegó o querés trabajar conmigo, este es el punto de contac
 
 <div style="text-align:center; margin-top:20px;">
 
-<a href="https://instagram.com/soysebaolmedo" target="_blank">
+<a href="https://instagram.com/soysebaolmedo" target="_blank" rel="noopener noreferrer">
 Instagram Oficial
 </a>
 
 <br><br>
 
-<a href="https://facebook.com/https://www.facebook.com/SEBASTIANOLMEDO22" target="_blank">
+<a href="https://www.facebook.com/SEBASTIANOLMEDO22" target="_blank" rel="noopener noreferrer">
 Facebook Oficial
 </a>
 
