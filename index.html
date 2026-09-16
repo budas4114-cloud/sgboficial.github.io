@@ -1310,9 +1310,176 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · AJUSTE PREMIUM MÓVIL + AUDIO ORIGINAL · 2026-09-15
+       ========================================================= */
+
+    .audio-preview-controls{
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+
+    .audio-play-btn{
+      appearance:none;
+      -webkit-appearance:none;
+      border:1px solid rgba(243,201,130,.48);
+      background:linear-gradient(135deg,rgba(215,166,93,.20),rgba(215,166,93,.07));
+      color:#fff4df;
+      min-height:52px;
+      padding:0 18px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font:700 14px/1 "Inter",sans-serif;
+      cursor:pointer;
+      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      transition:transform .22s ease, background .22s ease, border-color .22s ease;
+    }
+
+    .audio-play-btn:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg,rgba(215,166,93,.28),rgba(215,166,93,.10));
+      border-color:rgba(243,201,130,.72);
+    }
+
+    .audio-play-btn[aria-pressed="true"]{
+      background:linear-gradient(135deg,#d7a65d,#a96e2d);
+      color:#09090b;
+      border-color:transparent;
+    }
+
+    .audio-play-icon{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.10);
+      font-size:12px;
+      flex:0 0 auto;
+    }
+
+    .audio-play-btn[aria-pressed="true"] .audio-play-icon{
+      background:rgba(0,0,0,.12);
+    }
+
+    .audio-sound-note{
+      color:#aeb4c0;
+      font-size:11px;
+      line-height:1.45;
+      max-width:48ch;
+    }
+
+    @media (max-width:760px){
+
+      /* 1. FOTO DEL AUTOR: mostrar la imagen completa, sin cortar cabeza ni cuerpo */
+      .hero-media{
+        position:relative !important;
+        width:100% !important;
+        min-height:0 !important;
+        height:auto !important;
+        aspect-ratio:auto !important;
+        overflow:hidden !important;
+        background:#0b0b0e !important;
+        display:block !important;
+      }
+
+      .hero-media::after{
+        display:none !important;
+      }
+
+      .hero-media img{
+        position:relative !important;
+        inset:auto !important;
+        top:auto !important;
+        right:auto !important;
+        bottom:auto !important;
+        left:auto !important;
+        display:block !important;
+        width:100% !important;
+        height:auto !important;
+        max-height:none !important;
+        object-fit:contain !important;
+        object-position:center top !important;
+        transform:none !important;
+        margin:0 auto !important;
+      }
+
+      /* 2. CATÁLOGO EMBEBIDO:
+         damos más "ancho virtual" y reducimos el resultado para que
+         las fichas de Guada/Balduino/etc. entren completas en pantalla. */
+      .catalog-section .container{
+        overflow:visible !important;
+      }
+
+      .catalog-embed{
+        position:relative !important;
+        width:100% !important;
+        height:1500px !important;
+        overflow:hidden !important;
+        border-radius:22px !important;
+        background:#f2eee5 !important;
+      }
+
+      .catalog-frame{
+        display:block !important;
+        width:125% !important;
+        height:1875px !important;
+        max-width:none !important;
+        border:0 !important;
+        transform:scale(.80) !important;
+        transform-origin:top left !important;
+        background:#f2eee5 !important;
+      }
+
+      .catalog-actions{
+        gap:10px !important;
+      }
+
+      .catalog-open{
+        width:100% !important;
+        text-align:center !important;
+      }
+
+      /* 3. AUDIOBOOKS: botón cómodo para pulgar */
+      .audio-preview-controls{
+        align-items:stretch;
+      }
+
+      .audio-play-btn{
+        width:100%;
+        min-height:56px;
+      }
+
+      .audio-sound-note{
+        text-align:center;
+        max-width:none;
+      }
+    }
+
+    @media (max-width:420px){
+      /* Ajuste extra para celulares angostos */
+      .catalog-embed{
+        height:1460px !important;
+      }
+
+      .catalog-frame{
+        width:132% !important;
+        height:1920px !important;
+        transform:scale(.76) !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB MÓVIL: foto completa + catálogo encajado + ambiente sonoro original · 2026-09-15 -->
   <!-- SGB AUDIOBOOKS: botón + sección web · sin plataforma externa · 2026-09-15 -->
   <!-- SGB ACTUALIZADO: 12 compras directas · 60 obras · Facebook corregido · 2026-09-15 -->
   <!-- SGB RESPONSIVE CELULAR CORREGIDO · 2026-09-14 -->
@@ -1456,6 +1623,20 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             <div class="audio-coming">
               <strong>PRÓXIMAMENTE</strong>
               <span>Se podrán escuchar directamente desde editorialsgb.com</span>
+            </div>
+
+            <div class="audio-preview-controls">
+              <button id="sgbAmbientToggle"
+                      class="audio-play-btn"
+                      type="button"
+                      aria-pressed="false"
+                      aria-label="Activar ambiente sonoro SGB">
+                <span class="audio-play-icon" aria-hidden="true">▶</span>
+                <span class="audio-play-label">Escuchar ambiente SGB</span>
+              </button>
+              <small class="audio-sound-note">
+                Ambiente sonoro original generado por la web. Se activa únicamente al tocar.
+              </small>
             </div>
           </div>
         </div>
@@ -1685,6 +1866,151 @@ Facebook Oficial
         sections.forEach(section => observer.observe(section));
       }
     })();
+
+      /* =======================================================
+         SGB · Ambiente sonoro original generado por Web Audio
+         Se inicia solamente por acción del usuario.
+         ======================================================= */
+      (() => {
+        const button = document.getElementById('sgbAmbientToggle');
+        if (!button) return;
+
+        const label = button.querySelector('.audio-play-label');
+        const icon = button.querySelector('.audio-play-icon');
+
+        let ctx = null;
+        let master = null;
+        let filter = null;
+        let oscillators = [];
+        let lfo = null;
+        let bellTimer = null;
+        let active = false;
+
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
+        function makeOsc(freq, gainValue, type='sine'){
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = type;
+          osc.frequency.value = freq;
+          gain.gain.value = gainValue;
+          osc.connect(gain);
+          gain.connect(filter);
+          osc.start();
+          oscillators.push({osc, gain});
+        }
+
+        function softBell(){
+          if (!active || !ctx) return;
+
+          const notes = [261.63, 293.66, 329.63, 392.00, 440.00];
+          const freq = notes[Math.floor(Math.random() * notes.length)] / 2;
+
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.018, ctx.currentTime + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 3.2);
+
+          osc.connect(gain);
+          gain.connect(filter);
+          osc.start();
+          osc.stop(ctx.currentTime + 3.3);
+        }
+
+        async function startAmbient(){
+          if (!AudioContextClass) {
+            label.textContent = 'Audio no disponible';
+            return;
+          }
+
+          ctx = new AudioContextClass();
+          await ctx.resume();
+
+          master = ctx.createGain();
+          master.gain.value = 0.48;
+
+          filter = ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.value = 780;
+          filter.Q.value = 0.65;
+
+          filter.connect(master);
+          master.connect(ctx.destination);
+
+          /* Acorde cálido original: Do mayor en registro grave */
+          makeOsc(130.81, 0.020, 'sine');
+          makeOsc(164.81, 0.014, 'sine');
+          makeOsc(196.00, 0.012, 'sine');
+
+          /* Respiración lenta del ambiente */
+          lfo = ctx.createOscillator();
+          const lfoGain = ctx.createGain();
+          lfo.type = 'sine';
+          lfo.frequency.value = 0.085;
+          lfoGain.gain.value = 0.11;
+          lfo.connect(lfoGain);
+          lfoGain.connect(master.gain);
+          lfo.start();
+
+          active = true;
+          softBell();
+          bellTimer = window.setInterval(softBell, 5200);
+
+          button.setAttribute('aria-pressed', 'true');
+          button.setAttribute('aria-label', 'Detener ambiente sonoro SGB');
+          label.textContent = 'Detener ambiente SGB';
+          icon.textContent = '■';
+        }
+
+        function stopAmbient(){
+          active = false;
+
+          if (bellTimer) {
+            window.clearInterval(bellTimer);
+            bellTimer = null;
+          }
+
+          if (oscillators.length) {
+            oscillators.forEach(({osc}) => {
+              try { osc.stop(); } catch(e) {}
+            });
+          }
+          oscillators = [];
+
+          if (lfo) {
+            try { lfo.stop(); } catch(e) {}
+            lfo = null;
+          }
+
+          if (ctx) {
+            try { ctx.close(); } catch(e) {}
+            ctx = null;
+          }
+
+          master = null;
+          filter = null;
+
+          button.setAttribute('aria-pressed', 'false');
+          button.setAttribute('aria-label', 'Activar ambiente sonoro SGB');
+          label.textContent = 'Escuchar ambiente SGB';
+          icon.textContent = '▶';
+        }
+
+        button.addEventListener('click', () => {
+          if (active) stopAmbient();
+          else startAmbient();
+        });
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden && active) stopAmbient();
+        });
+      })();
+
   </script>
 
 </body>
