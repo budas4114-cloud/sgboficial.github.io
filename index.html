@@ -1476,9 +1476,173 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       }
     }
 
+  
+    /* =========================================================
+       SGB · SOLUCIÓN REAL PARA CATÁLOGO MÓVIL + AUDIO MP3
+       ========================================================= */
+    .mobile-shop{
+      display:none;
+    }
+
+    @media (max-width:760px){
+      /* El iframe pertenece a otro dominio y no se puede remaquetar
+         desde editorialsgb.com. En celular usamos tarjetas nativas. */
+      .catalog-embed{
+        display:none !important;
+      }
+
+      .mobile-shop{
+        display:grid !important;
+        grid-template-columns:1fr;
+        gap:18px;
+        width:100%;
+      }
+
+      .mobile-shop-intro{
+        padding:18px 4px 2px;
+      }
+
+      .mobile-shop-intro span{
+        display:block;
+        color:#e0b86f;
+        font-size:10px;
+        font-weight:900;
+        letter-spacing:.18em;
+        margin-bottom:8px;
+      }
+
+      .mobile-shop-intro h3{
+        margin:0 0 6px;
+        font-family:"Cormorant Garamond",serif;
+        font-size:36px;
+        line-height:1;
+        color:#fff4df;
+      }
+
+      .mobile-shop-intro p{
+        color:#b9bcc5;
+        font-size:14px;
+        line-height:1.5;
+      }
+
+      .mobile-shop-card{
+        position:relative;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:0;
+        overflow:hidden;
+        border-radius:24px;
+        border:1px solid rgba(215,166,93,.28);
+        background:#f1ede4;
+        box-shadow:0 20px 46px rgba(0,0,0,.34);
+      }
+
+      .mobile-shop-number{
+        position:absolute;
+        top:14px;
+        right:16px;
+        z-index:2;
+        color:rgba(96,76,44,.28);
+        font-family:"Cormorant Garamond",serif;
+        font-size:16px;
+        letter-spacing:.08em;
+      }
+
+      .mobile-cover-wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:22px 20px 12px;
+        background:
+          radial-gradient(circle at center, rgba(215,166,93,.12), transparent 52%),
+          #15130f;
+      }
+
+      .mobile-cover-wrap img{
+        display:block;
+        width:auto;
+        max-width:min(72vw,260px);
+        height:auto;
+        max-height:410px;
+        object-fit:contain !important;
+        object-position:center center !important;
+        border-radius:7px;
+        box-shadow:0 18px 38px rgba(0,0,0,.38);
+      }
+
+      .mobile-shop-copy{
+        padding:20px;
+        color:#17140f;
+      }
+
+      .mobile-shop-copy small{
+        color:#a44338;
+        font-size:10px;
+        font-weight:900;
+        letter-spacing:.14em;
+      }
+
+      .mobile-shop-copy h3{
+        margin:8px 0 5px;
+        font-family:"Cormorant Garamond",serif;
+        font-size:34px;
+        line-height:.95;
+        color:#17140f;
+      }
+
+      .mobile-shop-copy p{
+        margin:0 0 14px;
+        color:#6f685f;
+        font-family:"Cormorant Garamond",serif;
+        font-style:italic;
+        font-size:20px;
+        line-height:1.15;
+      }
+
+      .mobile-shop-copy > strong{
+        display:block;
+        margin:0 0 16px;
+        color:#8b662a;
+        font-family:"Cormorant Garamond",serif;
+        font-size:30px;
+        font-weight:600;
+      }
+
+      .mobile-shop-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .mobile-shop-actions a{
+        min-height:52px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid rgba(139,102,42,.40);
+        background:#f7f2e8;
+        color:#6d501d;
+        font-size:13px;
+        font-weight:900;
+        letter-spacing:.06em;
+        text-align:center;
+      }
+
+      .mobile-shop-actions a.buy{
+        background:#a77927;
+        color:#fff;
+        border-color:#a77927;
+      }
+
+      .audio-preview-controls audio{
+        display:none;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB CORRECCIÓN REAL: tienda móvil nativa + MP3 real · 2026-09-16 -->
   <!-- SGB MÓVIL: foto completa + catálogo encajado + ambiente sonoro original · 2026-09-15 -->
   <!-- SGB AUDIOBOOKS: botón + sección web · sin plataforma externa · 2026-09-15 -->
   <!-- SGB ACTUALIZADO: 12 compras directas · 60 obras · Facebook corregido · 2026-09-15 -->
@@ -1591,6 +1755,268 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>
+
+        <div class="mobile-shop" aria-label="Tienda móvil Editorial SGB">
+          <div class="mobile-shop-intro">
+            <span>TIENDA SGB · VERSIÓN MÓVIL</span>
+            <h3>Elegí tu próxima historia.</h3>
+            <p>En celular, cada portada se muestra completa y sin recortes.</p>
+          </div>
+          
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">01</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/guada.webp"
+                   alt="Portada de Guada"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Guada</h3>
+              <p>La sonrisa que venció al dolor</p>
+              <strong>$ 10.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/guada-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/guada"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">02</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/balduino-iv-oficial.webp"
+                   alt="Portada de Balduino IV"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Balduino IV</h3>
+              <p>El rey leproso que defendió Jerusalén contra todo</p>
+              <strong>$ 10.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/balduino-iv-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/balduino-iv"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">03</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/leonidas.webp"
+                   alt="Portada de Leónidas"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Leónidas</h3>
+              <p>El último muro de Grecia</p>
+              <strong>$ 10.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/leonidas-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/leonidas"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">04</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/la-era-de-la-envidia-ii.webp"
+                   alt="Portada de La era de la envidia II"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>La era de la envidia II</h3>
+              <p>El resentimiento moderno</p>
+              <strong>$ 12.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/la-era-de-la-envidia-ii-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/la-era-de-la-envidia-ii"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">05</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/la-argentina-de-mi-ley.webp"
+                   alt="Portada de La Argentina de Mi-Ley"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>La Argentina de Mi-Ley</h3>
+              <p>Lo que el discurso promete y la realidad termina mostrando</p>
+              <strong>$ 10.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/la-argentina-de-mi-ley-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/la-argentina-de-mi-ley"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">06</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/quien-soy-cuando-nadie-me-esta-mirando.webp"
+                   alt="Portada de ¿Quién soy cuando nadie me está mirando?"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>¿Quién soy cuando nadie me está mirando?</h3>
+              <p>El territorio donde terminan los personajes</p>
+              <strong>$ 15.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/quien-soy-cuando-nadie-me-esta-mirando-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/quien-soy-cuando-nadie-me-esta-mirando"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">07</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/soledad-femenina.webp"
+                   alt="Portada de Soledad femenina"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Soledad femenina</h3>
+              <p>Cuando aprender a estar sola deja de doler</p>
+              <strong>$ 16.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/soledad-femenina-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/soledad-femenina"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">08</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/infinit-borges.webp"
+                   alt="Portada de INFINIT BORGES"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>INFINIT BORGES</h3>
+              <p>Cuando la literatura se vuelve universo</p>
+              <strong>$ 16.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/infinit-borges-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/infinit-borges"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">09</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/ricardo-corazon-de-leon.webp"
+                   alt="Portada de Ricardo Corazón de León"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Ricardo Corazón de León</h3>
+              <p>El rey que conquistó el miedo, pero no Jerusalén</p>
+              <strong>$ 12.990</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/ricardo-corazon-de-leon-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/ricardo-corazon-de-leon"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">10</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/tango-ar.webp"
+                   alt="Portada de TANGO.AR"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>TANGO.AR</h3>
+              <p>La historia de un abrazo que conquistó al mundo</p>
+              <strong>$ 15.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/tango-ar-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/tango-ar"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">11</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/el-poder.webp"
+                   alt="Portada de El poder"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>El poder</h3>
+              <p>El miedo y la ignorancia como herramientas del poder</p>
+              <strong>$ 13.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/el-poder-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/el-poder"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+          <article class="mobile-shop-card">
+            <div class="mobile-shop-number">12</div>
+            <div class="mobile-cover-wrap">
+              <img src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/y-despues-de-ti-que.webp"
+                   alt="Portada de Y después de ti, ¿qué?"
+                   loading="lazy">
+            </div>
+            <div class="mobile-shop-copy">
+              <small>EDICIÓN DIGITAL EPUB</small>
+              <h3>Y después de ti, ¿qué?</h3>
+              <p>Cuando el amor se va, ¿quién sos vos?</p>
+              <strong>$ 14.000</strong>
+              <div class="mobile-shop-actions">
+                <a href="https://catalogo-sgb-privado.budas4114.chatgpt.site/muestras/y-despues-de-ti-que-capitulo-1.html"
+                   target="_blank" rel="noopener noreferrer">LEER GRATIS</a>
+                <a class="buy"
+                   href="https://catalogo-sgb-privado.budas4114.chatgpt.site/comprar/y-despues-de-ti-que"
+                   target="_blank" rel="noopener noreferrer">COMPRAR AQUÍ</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -1626,16 +2052,22 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             </div>
 
             <div class="audio-preview-controls">
+              <audio id="sgbAmbientAudio"
+                     src="SGB_Ambiente_Suave.mp3"
+                     preload="metadata"
+                     loop
+                     playsinline></audio>
+
               <button id="sgbAmbientToggle"
                       class="audio-play-btn"
                       type="button"
                       aria-pressed="false"
-                      aria-label="Activar ambiente sonoro SGB">
+                      aria-label="Reproducir ambiente sonoro SGB">
                 <span class="audio-play-icon" aria-hidden="true">▶</span>
                 <span class="audio-play-label">Escuchar ambiente SGB</span>
               </button>
               <small class="audio-sound-note">
-                Ambiente sonoro original generado por la web. Se activa únicamente al tocar.
+                Pista ambiente original SGB. Se reproduce solamente cuando tocás el botón.
               </small>
             </div>
           </div>
@@ -1868,146 +2300,52 @@ Facebook Oficial
     })();
 
       /* =======================================================
-         SGB · Ambiente sonoro original generado por Web Audio
-         Se inicia solamente por acción del usuario.
+         SGB · Reproductor real MP3 para navegadores móviles
          ======================================================= */
       (() => {
         const button = document.getElementById('sgbAmbientToggle');
-        if (!button) return;
+        const audio = document.getElementById('sgbAmbientAudio');
+        if (!button || !audio) return;
 
         const label = button.querySelector('.audio-play-label');
         const icon = button.querySelector('.audio-play-icon');
 
-        let ctx = null;
-        let master = null;
-        let filter = null;
-        let oscillators = [];
-        let lfo = null;
-        let bellTimer = null;
-        let active = false;
+        audio.volume = 0.72;
 
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-
-        function makeOsc(freq, gainValue, type='sine'){
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = type;
-          osc.frequency.value = freq;
-          gain.gain.value = gainValue;
-          osc.connect(gain);
-          gain.connect(filter);
-          osc.start();
-          oscillators.push({osc, gain});
+        async function playAudio(){
+          try{
+            await audio.play();
+            button.setAttribute('aria-pressed','true');
+            button.setAttribute('aria-label','Pausar ambiente sonoro SGB');
+            label.textContent = 'Pausar ambiente SGB';
+            icon.textContent = 'Ⅱ';
+          }catch(err){
+            label.textContent = 'Tocá nuevamente para escuchar';
+            button.setAttribute('aria-pressed','false');
+            icon.textContent = '▶';
+          }
         }
 
-        function softBell(){
-          if (!active || !ctx) return;
-
-          const notes = [261.63, 293.66, 329.63, 392.00, 440.00];
-          const freq = notes[Math.floor(Math.random() * notes.length)] / 2;
-
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, ctx.currentTime);
-
-          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.018, ctx.currentTime + 0.05);
-          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 3.2);
-
-          osc.connect(gain);
-          gain.connect(filter);
-          osc.start();
-          osc.stop(ctx.currentTime + 3.3);
-        }
-
-        async function startAmbient(){
-          if (!AudioContextClass) {
-            label.textContent = 'Audio no disponible';
-            return;
-          }
-
-          ctx = new AudioContextClass();
-          await ctx.resume();
-
-          master = ctx.createGain();
-          master.gain.value = 0.48;
-
-          filter = ctx.createBiquadFilter();
-          filter.type = 'lowpass';
-          filter.frequency.value = 780;
-          filter.Q.value = 0.65;
-
-          filter.connect(master);
-          master.connect(ctx.destination);
-
-          /* Acorde cálido original: Do mayor en registro grave */
-          makeOsc(130.81, 0.020, 'sine');
-          makeOsc(164.81, 0.014, 'sine');
-          makeOsc(196.00, 0.012, 'sine');
-
-          /* Respiración lenta del ambiente */
-          lfo = ctx.createOscillator();
-          const lfoGain = ctx.createGain();
-          lfo.type = 'sine';
-          lfo.frequency.value = 0.085;
-          lfoGain.gain.value = 0.11;
-          lfo.connect(lfoGain);
-          lfoGain.connect(master.gain);
-          lfo.start();
-
-          active = true;
-          softBell();
-          bellTimer = window.setInterval(softBell, 5200);
-
-          button.setAttribute('aria-pressed', 'true');
-          button.setAttribute('aria-label', 'Detener ambiente sonoro SGB');
-          label.textContent = 'Detener ambiente SGB';
-          icon.textContent = '■';
-        }
-
-        function stopAmbient(){
-          active = false;
-
-          if (bellTimer) {
-            window.clearInterval(bellTimer);
-            bellTimer = null;
-          }
-
-          if (oscillators.length) {
-            oscillators.forEach(({osc}) => {
-              try { osc.stop(); } catch(e) {}
-            });
-          }
-          oscillators = [];
-
-          if (lfo) {
-            try { lfo.stop(); } catch(e) {}
-            lfo = null;
-          }
-
-          if (ctx) {
-            try { ctx.close(); } catch(e) {}
-            ctx = null;
-          }
-
-          master = null;
-          filter = null;
-
-          button.setAttribute('aria-pressed', 'false');
-          button.setAttribute('aria-label', 'Activar ambiente sonoro SGB');
+        function pauseAudio(){
+          audio.pause();
+          button.setAttribute('aria-pressed','false');
+          button.setAttribute('aria-label','Reproducir ambiente sonoro SGB');
           label.textContent = 'Escuchar ambiente SGB';
           icon.textContent = '▶';
         }
 
         button.addEventListener('click', () => {
-          if (active) stopAmbient();
-          else startAmbient();
+          if (audio.paused) playAudio();
+          else pauseAudio();
+        });
+
+        audio.addEventListener('error', () => {
+          label.textContent = 'Audio no disponible';
+          button.disabled = true;
         });
 
         document.addEventListener('visibilitychange', () => {
-          if (document.hidden && active) stopAmbient();
+          if (document.hidden && !audio.paused) pauseAudio();
         });
       })();
 
