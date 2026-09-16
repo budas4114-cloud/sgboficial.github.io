@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Oficial | SGB – Historias que sanan</title>
+  <meta name="description" content="Catálogo oficial de Editorial SGB – Historias que sanan, Sebastián Olmedo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#080808; --gold:#d7a65d; --gold2:#f2cf94; --cream:#fff4df;
+      --muted:#b8b7b4; --line:rgba(215,166,93,.24); --max:1440px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; min-height:100vh; font-family:"Inter",sans-serif; color:#f7f4ee;
+      background:
+        radial-gradient(circle at 78% 4%, rgba(122,47,35,.28), transparent 26%),
+        radial-gradient(circle at 15% 0%, rgba(215,166,93,.08), transparent 24%),
+        linear-gradient(180deg,#090806 0%,#0d0b09 100%);
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .shell{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+    .top{
+      position:sticky;top:0;z-index:50;background:rgba(8,8,8,.88);
+      backdrop-filter:blur(18px);border-bottom:1px solid var(--line)
+    }
+    .top-inner{
+      min-height:118px;display:flex;align-items:center;justify-content:space-between;
+      gap:24px;padding:12px 0
+    }
+    .brand{display:flex;align-items:center;gap:18px;min-width:0}
+    .brand-logo{
+      width:96px;height:96px;object-fit:contain;border-radius:20px;
+      border:1px solid rgba(215,166,93,.32);background:#050505;
+      box-shadow:0 14px 34px rgba(0,0,0,.42);flex:0 0 auto
+    }
+    .brand-copy strong{
+      display:block;color:var(--gold2);letter-spacing:.22em;font-size:12px;margin-bottom:5px
+    }
+    .brand-copy span{
+      display:block;font-family:"Cormorant Garamond",serif;
+      font-size:clamp(27px,3vw,42px);line-height:.95;color:var(--cream)
+    }
+    .brand-copy small{
+      display:block;margin-top:7px;color:#dad3c6;font-size:10px;font-weight:800;
+      letter-spacing:.14em;text-transform:uppercase
+    }
+    .back{
+      min-height:48px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(215,166,93,.35);border-radius:999px;color:var(--gold2);
+      font-size:13px;font-weight:800;white-space:nowrap;background:rgba(215,166,93,.07)
+    }
+    .intro{padding:38px 0 24px}
+    .eyebrow{
+      color:#df8e83;font-size:11px;font-weight:900;letter-spacing:.22em;
+      text-transform:uppercase;margin-bottom:12px
+    }
+    h1{
+      margin:0 0 14px;max-width:12ch;font-family:"Cormorant Garamond",serif;
+      font-size:clamp(48px,7vw,92px);line-height:.88;color:#fff8ec;letter-spacing:-.025em
+    }
+    .intro p{max-width:760px;margin:0;color:var(--muted);font-size:17px;line-height:1.65}
+    .status{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .status span{
+      border:1px solid rgba(215,166,93,.22);background:rgba(215,166,93,.06);
+      color:#ead7b4;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:800
+    }
+    .catalog-wrap{
+      margin:14px 0 42px;border-radius:28px;overflow:hidden;
+      border:1px solid rgba(215,166,93,.30);background:#f1ede4;
+      box-shadow:0 30px 80px rgba(0,0,0,.48)
+    }
+    .catalog-wrap::before{
+      content:"";display:block;height:4px;
+      background:linear-gradient(90deg,#a94034,#d7a65d,#a94034)
+    }
+    iframe{
+      display:block;width:100%;height:calc(100vh - 170px);min-height:760px;
+      border:0;background:#f1ede4
+    }
+    .foot{padding:0 0 36px;color:#a8a39a;font-size:12px;text-align:center}
+    @media(max-width:760px){
+      .shell{width:min(calc(100% - 22px),var(--max))}
+      .top-inner{min-height:96px;gap:12px}
+      .brand{gap:12px}
+      .brand-logo{width:72px;height:72px;border-radius:15px}
+      .brand-copy span{font-size:26px}
+      .brand-copy small{font-size:8px;letter-spacing:.10em}
+      .back{min-height:42px;padding:0 12px;font-size:11px}
+      .intro{padding:26px 0 18px}
+      h1{font-size:52px;max-width:10ch}
+      .intro p{font-size:15px}
+      .catalog-wrap{
+        width:100vw;margin-left:calc(50% - 50vw);border-radius:0;
+        border-left:0;border-right:0
+      }
+      iframe{height:82vh;min-height:660px}
+    }
+    @media(max-width:430px){
+      .brand-copy small{display:none}
+      .brand-copy span{font-size:23px}
+      .brand-logo{width:68px;height:68px}
+      .back{font-size:0;width:44px;padding:0}
+      .back::after{content:"←";font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="https://editorialsgb.com" aria-label="Volver a Editorial SGB">
+        <img class="brand-logo"
+             src="https://editorialsgb.com/SGB_Logo_Oficial.jpg"
+             alt="SGB Editorial – Historias que sanan">
+        <div class="brand-copy">
+          <strong>SGB</strong>
+          <span>Historias que sanan</span>
+          <small>Catálogo oficial · Sebastián Olmedo</small>
+        </div>
+      </a>
+      <a class="back" href="https://editorialsgb.com">Volver a la web</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell intro">
+      <div class="eyebrow">Editorial SGB · Catálogo oficial</div>
+      <h1>Encontrá la historia que te estaba buscando.</h1>
+      <p>
+        Recorré la biblioteca completa de Editorial SGB sin perder la identidad de la web oficial.
+        Podés buscar por título o temática, abrir fichas y conocer cada obra.
+      </p>
+      <div class="status">
+        <span>60 obras</span>
+        <span>8 temáticas</span>
+        <span>Fichas completas</span>
+        <span>SGB · Historias que sanan</span>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="catalog-wrap">
+        <iframe
+          src="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
+          title="Catálogo completo Editorial SGB"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="fullscreen">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell foot">
+    © 2026 SGB – Historias que sanan · Sebastián Olmedo · editorialsgb.com
+  </footer>
+</body>
+</html>
