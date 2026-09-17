@@ -1640,6 +1640,172 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
     }
 
   
+
+
+    /* =========================================================
+       SGB · TIENDA DIRECTA TAMBIÉN EN ESCRITORIO
+       Las mismas 12 tarjetas nativas del celular aparecen primero
+       en PC/tablet; la biblioteca completa de 60 obras queda debajo.
+       ========================================================= */
+    @media (min-width:761px){
+      .mobile-shop{
+        display:grid !important;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:22px;
+        width:100%;
+        margin:4px 0 34px;
+      }
+
+      .mobile-shop-intro{
+        grid-column:1 / -1;
+        padding:18px 4px 8px;
+      }
+
+      .mobile-shop-intro span{
+        display:block;
+        color:#e0b86f;
+        font-size:11px;
+        font-weight:900;
+        letter-spacing:.18em;
+        margin-bottom:8px;
+      }
+
+      .mobile-shop-intro h3{
+        margin:0 0 7px;
+        font-family:"Cormorant Garamond",serif;
+        font-size:44px;
+        line-height:1;
+        color:#fff4df;
+      }
+
+      .mobile-shop-intro p{
+        margin:0;
+        max-width:76ch;
+        color:#b9bcc5;
+        font-size:15px;
+        line-height:1.55;
+      }
+
+      .mobile-shop-card{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        overflow:hidden;
+        min-width:0;
+        border-radius:24px;
+        border:1px solid rgba(215,166,93,.28);
+        background:#f1ede4;
+        box-shadow:0 20px 46px rgba(0,0,0,.34);
+      }
+
+      .mobile-shop-number{
+        position:absolute;
+        top:14px;
+        right:16px;
+        z-index:2;
+        color:rgba(96,76,44,.28);
+        font-family:"Cormorant Garamond",serif;
+        font-size:16px;
+        letter-spacing:.08em;
+      }
+
+      .mobile-cover-wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:390px;
+        padding:24px 22px 16px;
+        background:radial-gradient(circle at center, rgba(215,166,93,.12), transparent 52%),#15130f;
+      }
+
+      .mobile-cover-wrap img{
+        display:block;
+        width:auto;
+        max-width:100%;
+        height:auto;
+        max-height:350px;
+        object-fit:contain !important;
+        object-position:center center !important;
+        border-radius:7px;
+        box-shadow:0 18px 38px rgba(0,0,0,.38);
+      }
+
+      .mobile-shop-copy{
+        display:flex;
+        flex-direction:column;
+        flex:1;
+        padding:22px;
+        color:#17140f;
+      }
+
+      .mobile-shop-copy small{
+        color:#a44338;
+        font-size:10px;
+        font-weight:900;
+        letter-spacing:.14em;
+      }
+
+      .mobile-shop-copy h3{
+        margin:8px 0 6px;
+        font-family:"Cormorant Garamond",serif;
+        font-size:32px;
+        line-height:.98;
+        color:#17140f;
+      }
+
+      .mobile-shop-copy p{
+        margin:0 0 14px;
+        color:#6f685f;
+        font-family:"Cormorant Garamond",serif;
+        font-style:italic;
+        font-size:19px;
+        line-height:1.15;
+      }
+
+      .mobile-shop-copy > strong{
+        display:block;
+        margin:auto 0 16px;
+        padding-top:8px;
+        color:#8b662a;
+        font-family:"Cormorant Garamond",serif;
+        font-size:30px;
+        font-weight:600;
+      }
+
+      .mobile-shop-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .mobile-shop-actions a{
+        min-height:50px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:8px 10px;
+        border:1px solid rgba(139,102,42,.40);
+        background:#f7f2e8;
+        color:#6d501d;
+        font-size:12px;
+        font-weight:900;
+        letter-spacing:.04em;
+        text-align:center;
+      }
+
+      .mobile-shop-actions a.buy{
+        background:#a77927;
+        color:#fff;
+        border-color:#a77927;
+      }
+    }
+
+    @media (min-width:761px) and (max-width:1100px){
+      .mobile-shop{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
     /* =========================================================
        SGB · CATÁLOGO COMPLETO REINTEGRADO EN CELULAR
        Mantiene la tienda móvil de 12 títulos y vuelve a incluir
@@ -1776,8 +1942,8 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
           <div class="hero-actions">
             <a class="btn btn-secondary" href="#catalogo" aria-label="Ver el catálogo interactivo de Editorial SGB">VER LIBROS DISPONIBLES</a>
             <a class="btn btn-primary btn-buy"
-               href="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
-               aria-label="Comprar los e-books disponibles directamente en Editorial SGB">COMPRAR AQUÍ</a>
+               href="#tienda-directa"
+               aria-label="Ir a los e-books disponibles para compra directa en Editorial SGB">COMPRAR AQUÍ</a>
             <a class="btn btn-audio" href="#audiobooks" aria-label="Ir a la sección Audiobooks SGB">AUDIOBOOKS SGB</a>
           </div>
 
@@ -1818,21 +1984,11 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
           </a>
         </div>
 
-        <div class="catalog-embed" role="region" aria-label="Catálogo interactivo de Editorial SGB">
-          <iframe
-            class="catalog-frame"
-            src="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
-            title="Catálogo interactivo de Editorial SGB"
-            loading="eager"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
-        </div>
-
-        <div class="mobile-shop" aria-label="Tienda móvil Editorial SGB">
+        <div class="mobile-shop" id="tienda-directa" aria-label="Tienda directa Editorial SGB">
           <div class="mobile-shop-intro">
-            <span>TIENDA SGB · VERSIÓN MÓVIL</span>
+            <span>TIENDA SGB · COMPRA DIRECTA</span>
             <h3>Elegí tu próxima historia.</h3>
-            <p>En celular, cada portada se muestra completa y sin recortes.</p>
+            <p>12 e-books disponibles para compra directa. Portadas completas, muestras gratuitas y acceso seguro a Mercado Pago.</p>
           </div>
           
           <article class="mobile-shop-card">
@@ -2087,6 +2243,17 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
               </div>
             </div>
           </article>
+        </div>
+
+
+        <div class="catalog-embed" role="region" aria-label="Catálogo interactivo de Editorial SGB">
+          <iframe
+            class="catalog-frame"
+            src="https://catalogo-sgb-privado.budas4114.chatgpt.site/#catalogo"
+            title="Catálogo interactivo de Editorial SGB"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
         </div>
 
         <div class="catalog-mobile-integrated" aria-label="Biblioteca completa SGB integrada">
