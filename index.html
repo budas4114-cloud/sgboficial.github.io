@@ -1942,9 +1942,166 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       .trailer-video{width:min(100%, 420px);max-height:none;}
     }
 
+
+    /* =========================================================
+       SGB · AUTOR PREMIUM + EDITORIAL EN OBRA
+       ========================================================= */
+    .author-premium-section{
+      padding:48px 0 16px;
+    }
+
+    .author-premium-card{
+      display:grid;
+      grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);
+      gap:36px;
+      align-items:stretch;
+      overflow:hidden;
+      border:1px solid rgba(215,166,93,.24);
+      border-radius:34px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(215,166,93,.13), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+      box-shadow:0 28px 72px rgba(0,0,0,.46);
+    }
+
+    .author-premium-photo{
+      position:relative;
+      min-height:720px;
+      overflow:hidden;
+      background:#09090c;
+    }
+
+    .author-premium-photo::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, transparent 60%, rgba(5,5,7,.40) 100%),
+        linear-gradient(90deg, transparent 78%, rgba(7,7,9,.35) 100%);
+    }
+
+    .author-premium-photo img{
+      width:100%;
+      height:100%;
+      min-height:720px;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .author-premium-copy{
+      padding:48px 48px 42px 10px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .author-premium-kicker{
+      color:var(--gold-soft);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .author-premium-copy h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(46px,5.8vw,78px);
+      line-height:.90;
+      color:#fff3df;
+      margin-bottom:10px;
+      max-width:11ch;
+    }
+
+    .author-premium-role{
+      color:#e8c98f;
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px;
+      line-height:1.1;
+      margin-bottom:24px;
+    }
+
+    .author-premium-copy p{
+      color:#d6dbe4;
+      font-size:17px;
+      line-height:1.72;
+      margin-bottom:16px;
+      max-width:66ch;
+    }
+
+    .author-premium-quote{
+      margin:8px 0 26px;
+      padding:18px 0 18px 22px;
+      border-left:3px solid var(--gold);
+      font-family:"Cormorant Garamond",serif;
+      color:#fff0d8;
+      font-size:25px;
+      line-height:1.12;
+    }
+
+    .sgb-in-progress{
+      margin-top:6px;
+      padding:26px 28px;
+      border-radius:24px;
+      border:1px solid rgba(215,166,93,.26);
+      background:linear-gradient(135deg, rgba(215,166,93,.10), rgba(255,255,255,.025));
+    }
+
+    .sgb-in-progress small{
+      display:block;
+      margin-bottom:9px;
+      color:var(--gold-soft);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    .sgb-in-progress h3{
+      margin:0 0 10px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(30px,3vw,42px);
+      line-height:1;
+      color:#fff4df;
+    }
+
+    .sgb-in-progress p{
+      margin:0;
+      color:#c8ced8;
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    @media (max-width:900px){
+      .author-premium-card{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+      .author-premium-photo,
+      .author-premium-photo img{
+        min-height:0;
+        height:auto;
+      }
+      .author-premium-photo img{
+        width:100%;
+        object-fit:contain;
+      }
+      .author-premium-copy{
+        padding:30px 24px 26px;
+      }
+      .author-premium-copy h2{
+        max-width:none;
+      }
+      .author-premium-role{
+        font-size:24px;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- SGB INDEX FINAL · AUTOR PREMIUM · EDITORIAL EN OBRA · 2026-09-17 -->
   <!-- SGB PRECIOS ACTUALIZADOS · 12 TÍTULOS · 2026-09-16 -->
   <!-- SGB: catálogo oficial interno + acceso completo con identidad oficial · 2026-09-16 -->
   <!-- SGB CATÁLOGO COMPLETO REINTEGRADO EN MÓVIL · 2026-09-16 -->
@@ -1990,7 +2147,6 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         <a class="nav-audio" href="#audiobooks">Audiobooks</a>
         <a href="#destacado">Destacado</a>
         <a href="#autor">Autor</a>
-        <a href="#conferencias">Conferencias</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -2455,111 +2611,42 @@ Pero si llegaste hasta acá… es por algo.
       </div>
     </section>
 
-    <section class="panel-wrap" id="autor">
+    <section class="author-premium-section" id="autor">
       <div class="container">
-        <div class="panel">
-          <h2>Sebastián Olmedo</h2>
+        <div class="author-premium-card">
+          <div class="author-premium-photo">
+            <img src="Sebastian_Olmedo_Autor_300DPI_4MB.jpg" alt="Sebastián Olmedo, autor y fundador de Editorial SGB">
+          </div>
 
-<p>
-Autor, creador y fundador de la editorial SGB – Historias que sanan.
-</p>
+          <div class="author-premium-copy">
+            <div class="author-premium-kicker">AUTOR · EDITORIAL SGB · HISTORIAS QUE SANAN</div>
+            <h2>Sebastián Olmedo</h2>
+            <div class="author-premium-role">Escritor contemporáneo argentino</div>
 
-<p>
-SGB – Historias que sanan nació de una convicción simple:
-las historias pueden hacer algo que los discursos rara vez consiguen.
-Pueden atravesarnos.
-Pueden ayudarnos a comprender el dolor ajeno.
-Pueden mostrarnos partes de nosotros que habíamos olvidado.
-Pueden recordarnos que incluso en medio de la pérdida, el miedo o la incertidumbre, sigue existiendo algo profundamente humano que merece ser contado.
-Cada libro de este catálogo es una invitación a mirar más despacio, sentir más profundamente y recordar que detrás de cada nombre, cada historia y cada cicatriz, existe una persona intentando encontrar sentido a su propia vida.
-</p>
+            <p>
+              Sebastián Olmedo construye una obra contemporánea atravesada por la memoria, la identidad, la resiliencia, la historia y las emociones humanas. Desde Editorial SGB — Historias que sanan, desarrolla un catálogo propio donde cada libro nace de una pregunta, una experiencia o una herida que merece ser mirada de frente.
+            </p>
 
-<p>
-Cada libro nace desde la experiencia, desde lo vivido y desde una forma
-honesta de mirar la realidad. No es contenido para distraer.
-Es escritura para generar algo en quien lee.
-</p>
+            <p>
+              Su escritura recorre distintos territorios —biografía, historia, introspección, vínculos, poesía y realidad social— con una misma intención: transformar lo vivido, lo observado y lo investigado en historias capaces de dejar una marca en quien las lee.
+            </p>
 
-<div class="quote">
-“No escribo para distraer. Escribo para que algo adentro se mueva.”
-</div>
-          
- <p>
-SGB – Historias que sanan no nació para seguir tendencias ni para ocupar espacio entre miles de libros.
-Nació de una búsqueda profundamente humana: entender por qué algunas historias nos cambian para siempre mientras otras se olvidan apenas terminan.
-Durante años escribí sobre personas, heridas, pérdidas, amor, discapacidad, soledad, resiliencia, historia y memoria.
-Con el tiempo comprendí que detrás de cada tema siempre aparecía la misma pregunta:
-¿qué significa realmente ser humano?
-Por eso cada libro publicado bajo este sello intenta ir más allá de las respuestas fáciles.
-No busca convencer.
-No busca adoctrinar.
-Busca acompañar, incomodar, emocionar y dejar algo vivo dentro del lector mucho después de cerrar la última página.
-</p>
-   
+            <div class="author-premium-quote">
+              “SGB no nació para producir libros en serie. Nació para construir una obra con identidad.”
+            </div>
+
+            <div class="sgb-in-progress" id="en-obra">
+              <small>SGB EDITORIAL · EN OBRA</small>
+              <h3>Seguimos escribiendo. Seguimos construyendo.</h3>
+              <p>
+                Hay libros que ya encontraron lectores y otros que todavía están naciendo. Seguimos trabajando en nuevas obras, nuevas historias y nuevas formas de hacer crecer Editorial SGB. Sin apuro por prometer lo que todavía no existe: página a página, libro a libro, seguimos construyendo una editorial con voz propia.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-   <section class="panel-wrap" id="conferencias">
-  <div class="container">
-    <div class="panel">
-      <h2>Conferencias SGB</h2>
-
-      <p>
-        El universo SGB trasciende el libro y se convierte en experiencia viva.
-        Charlas, presentaciones y encuentros con identidad propia, pensados
-        para impactar, generar reflexión y dejar marca.
-      </p>
-
-      <div class="feature-media">
-    <img src="CONFERENCIA2-SEBA.png" alt="Sebastián Olmedo">
-    <img src="sgb-conferencias.jpg.png" alt="Conferencias SGB">
-</div>
-      
-      <div class="feature-copy">
-        <h2>Cómo nació SGB</h2>
-
-<p>
-SGB – Historias que sanan no nació en una oficina.
-Nació en el dolor, en la resiliencia y en la necesidad de transformar experiencias reales en algo que pueda acompañar a otras personas.
-</p>
-
-<p>
-Cada libro publicado fue construido de manera independiente:
-aprendiendo maquetación editorial, diseño de portadas, narrativa premium, Amazon Kindle, impresión profesional, identidad visual y desarrollo web desde cero.
-</p>
-
-<p>
-Nada vino armado.
-Nada fue heredado.
-Todo se construyó palabra por palabra.
-</p>
-
-<p>
-Hoy SGB no es solamente una editorial.
-Es un ecosistema creativo y humano donde cada historia busca dejar una marca real.
-</p>
-
-<h3>
-“No publicamos por moda.
-Publicamos porque algunas historias merecen existir.”
-</h3>
-  <h3>No es una charla. Es algo que te atraviesa.</h3>
-        <p>
-  No es una conferencia para escuchar. Es una experiencia para vivir.
-        </p> 
-        
-  <p>
-    Cada conferencia es un espacio real. Sin frases vacías, sin maquillaje.
-    Historias que se dicen de frente, que incomodan, que mueven y que dejan algo adentro.
-  </p>
-</div>
-
-      <a class="btn btn-primary" href="#contacto">Solicitar información</a>
-    </div>
-  </div>
-</section>
     <section class="cta" id="contacto">
       <div class="container">
         <div class="cta-box">
