@@ -2119,6 +2119,46 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       transform:translateY(-1px);
     }
 
+  
+    /* Acceso a la edición impresa existente: estilos exclusivos de esta sección. */
+    .sgb-printed-section{scroll-margin-top:170px}
+    .sgb-printed-section h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(32px,5vw,48px);
+      line-height:1.1;
+      color:var(--gold-soft);
+      margin-bottom:24px;
+    }
+    .sgb-printed-card{
+      display:grid;
+      grid-template-columns:minmax(180px,280px) minmax(0,1fr);
+      gap:clamp(24px,4vw,52px);
+      align-items:center;
+      padding:clamp(22px,4vw,42px);
+      border:1px solid rgba(215,166,93,.32);
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,#17140f,#101017);
+    }
+    .sgb-printed-cover{width:100%;max-width:260px;height:auto;justify-self:center;border-radius:7px}
+    .sgb-printed-copy{min-width:0}
+    .sgb-printed-copy h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(32px,4vw,48px);
+      line-height:1.1;
+      margin-bottom:16px;
+    }
+    .sgb-printed-format{color:var(--gold-soft);font-weight:700;margin-bottom:10px}
+    .sgb-printed-isbn{color:var(--muted);font-size:14px;margin-bottom:20px}
+    .sgb-printed-price{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:18px}
+    .sgb-printed-buy{max-width:100%;min-height:54px;text-align:center;padding:14px 22px}
+    .sgb-printed-shipping{color:var(--muted);font-size:14px;line-height:1.6;max-width:65ch;margin-top:18px}
+    .sgb-printed-link:focus-visible,.sgb-printed-buy:focus-visible{outline:3px solid var(--gold-soft);outline-offset:4px}
+    @media(max-width:760px){
+      .sgb-printed-section{scroll-margin-top:150px}
+      .sgb-printed-card{grid-template-columns:minmax(0,1fr);gap:24px}
+      .sgb-printed-cover{max-width:220px}
+      .sgb-printed-buy{width:100%}
+    }
   </style>
 </head>
 <body>
@@ -2190,6 +2230,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             <a class="btn btn-primary btn-buy"
                href="#tienda-directa"
                aria-label="Ir a los e-books disponibles para compra directa en Editorial SGB">COMPRAR AQUÍ</a>
+            <a class="btn btn-secondary sgb-printed-link" href="#libros-tapa-blanda">LIBROS TAPA BLANDA</a>
             <a class="btn btn-audio" href="#audiobooks" aria-label="Ir a la sección Audiobooks SGB">AUDIOBOOKS SGB</a>
           </div>
 
@@ -2202,6 +2243,27 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
           <img src="Sebastian_Olmedo_SGB.jpg
           " alt="Sebastián Olmedo">
         </div>
+      </div>
+    </section>
+
+    <section class="section sgb-printed-section" id="libros-tapa-blanda" aria-labelledby="sgb-printed-heading">
+      <div class="container">
+        <h2 id="sgb-printed-heading">LIBROS TAPA BLANDA</h2>
+        <article class="sgb-printed-card" aria-labelledby="sgb-printed-guada">
+          <img class="sgb-printed-cover"
+               src="https://catalogo-sgb-privado.budas4114.chatgpt.site/covers/guada.webp"
+               alt="Portada de GUADA — La sonrisa que venció al dolor"
+               loading="lazy">
+          <div class="sgb-printed-copy">
+            <h3 id="sgb-printed-guada">GUADA — La sonrisa que venció al dolor</h3>
+            <p class="sgb-printed-format">Edición impresa · Tapa blanda · A5 · 280 páginas</p>
+            <p class="sgb-printed-isbn">ISBN 978-631-01-8808-9</p>
+            <p class="sgb-printed-price" aria-label="59.990 pesos argentinos">$59.990</p>
+            <a class="btn btn-primary sgb-printed-buy"
+               href="https://catalogo-sgb-privado.budas4114.chatgpt.site/impresos/guada-tapa-blanda">COMPRAR LIBRO IMPRESO</a>
+            <p class="sgb-printed-shipping">El envío corre por cuenta del comprador y será coordinado por Editorial SGB luego de acreditado el pago.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -2815,4 +2877,5 @@ Facebook Oficial
 </body>
   
 </html>
+
 
