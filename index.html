@@ -2120,6 +2120,29 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
     }
 
   
+    /* Acceso directo a la instalación existente de SGB Lectores. */
+    .nav-links a.nav-app{
+      flex-direction:column;
+      gap:2px;
+      padding:8px 12px;
+      line-height:1.25;
+      text-align:center;
+      color:#111014;
+      background:linear-gradient(135deg,#f2cf95,#c88b43);
+      border-color:rgba(240,201,142,.65);
+      font-size:11px;
+      font-weight:800;
+    }
+    .nav-links a.nav-app small{font-size:10px;font-weight:600}
+    .nav-links a.nav-app:hover{color:#111014;box-shadow:0 7px 20px rgba(215,166,93,.22)}
+    .nav-links a.nav-app:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
+    @media (min-width:761px){
+      .nav-links{flex-wrap:wrap;justify-content:flex-end}
+    }
+    @media (max-width:760px){
+      .nav-links a.nav-app{grid-column:1 / -1;min-height:52px}
+    }
+
     /* Acceso a la edición impresa existente: estilos exclusivos de esta sección. */
     .sgb-printed-section{scroll-margin-top:170px}
     .sgb-printed-section h2{
@@ -2205,6 +2228,7 @@ transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       <nav class="nav-links" id="sgbNavLinks" aria-label="Navegación principal">
         <a class="active" href="#inicio">Inicio</a>
         <a href="#catalogo">Catálogo</a>
+        <a class="nav-app" href="https://catalogo-sgb-privado.budas4114.chatgpt.site/app#ayuda"><span>DESCARGAR APP SGB</span><small>SGB Lectores</small></a>
         <a class="nav-audio" href="#audiobooks">Audiobooks</a>
         <a href="#destacado">Destacado</a>
         <a href="#autor">Autor</a>
